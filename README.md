@@ -40,9 +40,7 @@
 | 💪 [GymFuel](https://github.com/Akshat685) | `MongoDB` `Express.js` `React.js`<br>`Node.js` `HTML` `CSS` `JS` | 🔗 |
 | 📋 [FlowBoard](https://github.com/Akshat685) | `Next.js` `TypeScript` `Tailwind CSS` `GraphQL`<br>`Apollo` `Prisma` `PostgreSQL` `Sanity` `Node.js` | 🔗 |
 
-> 💡 *Update the links above with your actual project repositories!*
-> 
-> ❤️ *"I don't watch anime, I code anime."*
+> 💡 *"First, solve the problem. Then, write the code." - John Johnson*
 
 </td>
 </tr>
