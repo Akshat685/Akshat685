@@ -5,57 +5,67 @@
 <!-- ═══════════════════════════════════════════════════════════ -->
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="banner.svg?v=1" />
-  <source media="(prefers-color-scheme: light)" srcset="banner-light.svg?v=1" />
-  <img alt="Akshat Shettigar - Full Stack Developer" src="banner.svg?v=1" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="banner.svg?v=2" />
+  <source media="(prefers-color-scheme: light)" srcset="banner-light.svg?v=2" />
+  <img alt="Akshat Shettigar - Full Stack Developer" src="banner.svg?v=2" width="100%" />
 </picture>
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!--  LANYARD ID BADGE                                          -->
-<!-- ═══════════════════════════════════════════════════════════ -->
 
 <br/>
 
-<img src="lanyard.svg?v=1" alt="Akshat's Developer ID Badge" width="280" />
-
-<br/><br/>
-
 <!-- ═══════════════════════════════════════════════════════════ -->
-<!--  GITHUB STATS                                              -->
+<!--  LANYARD + FEATURED PROJECTS (side by side)               -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<h2>📊 GitHub Stats</h2>
+<table>
+<tr>
+<td width="300" align="center" valign="top">
 
-<p>
-  <img src="stats.svg?v=1" alt="GitHub Stats" width="495" />
-  &nbsp;&nbsp;
-  <img src="langs.svg?v=1" alt="Top Languages" width="350" />
-</p>
+<img src="lanyard.svg?v=2" alt="Developer ID Badge" width="280" />
 
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!--  TROPHIES                                                  -->
-<!-- ═══════════════════════════════════════════════════════════ -->
+<sub>~ drag me.. just kidding, I'm an SVG ♥ ~</sub>
 
-<h2>🏆 Trophies</h2>
+</td>
+<td valign="top">
 
-<img src="trophies.svg?v=1" alt="GitHub Trophies" width="800" />
+### 🚀 My Projects
 
-<br/><br/>
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!--  FEATURED PROJECTS                                         -->
-<!-- ═══════════════════════════════════════════════════════════ -->
-
-<h2>🚀 Featured Projects</h2>
-
-| Project | Description | Tech Stack |
-|---------|-------------|------------|
-| 🤖 [AI Chat App](https://github.com/Akshat685) | AI-powered conversational app with RAG pipeline | Next.js, OpenAI, Vectors |
-| 🌐 [Portfolio Site](https://github.com/Akshat685) | Personal developer portfolio with animations | React, TailwindCSS |
-| 📊 [Data Dashboard](https://github.com/Akshat685) | Real-time analytics dashboard | TypeScript, GraphQL, Node.js |
-| 🔧 [Dev Tools CLI](https://github.com/Akshat685) | Developer productivity command-line tools | Node.js, TypeScript |
+| 🎯 Project | 💻 Tech | ⭐ |
+|:-----------|:--------|:--:|
+| 🤖 [AI Chat App](https://github.com/Akshat685) | `Next.js` `OpenAI` `RAG` | ⭐ |
+| 🌐 [Portfolio Site](https://github.com/Akshat685) | `React` `TailwindCSS` | ⭐ |
+| 📊 [Data Dashboard](https://github.com/Akshat685) | `TypeScript` `GraphQL` | ⭐ |
+| 🔧 [Dev Tools CLI](https://github.com/Akshat685) | `Node.js` `TypeScript` | ⭐ |
 
 > 💡 *Update the links above with your actual project repositories!*
+
+<br/>
+
+> ❤️ *"I don't watch anime, I code anime."*
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  GITHUB STATS & GRAPHS                                    -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<h2>📊 GitHub Stats & Graphs</h2>
+
+<p>
+  <img src="stats.svg?v=2" alt="GitHub Stats" width="500" />
+  &nbsp;&nbsp;
+  <img src="langs.svg?v=2" alt="Top Languages" width="340" />
+</p>
+
+<br/>
+
+<!-- Streak Stats -->
+<p>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Akshat685&theme=midnight-purple&hide_border=true&background=0d0221&stroke=4c1d95&ring=c026d3&fire=f472b6&currStreakLabel=c084fc&sideLabels=c084fc&currStreakNum=f8fafc&sideNums=f8fafc&dates=94a3b8" alt="GitHub Streak" width="500" />
+</p>
 
 <br/>
 
@@ -63,22 +73,30 @@
 <!--  CONTRIBUTION GRAPH                                        -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<h2>📈 Contribution Activity</h2>
+<h2>📈 Contribution Graph</h2>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Akshat685&bg_color=0d0221&color=c084fc&line=7c3aed&point=f472b6&area=true&area_color=2d1b69&hide_border=true&custom_title=Akshat's%20Contribution%20Graph" alt="Contribution Graph" width="100%" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Akshat685&bg_color=0d0221&color=c084fc&line=7c3aed&point=f472b6&area=true&area_color=2d1b69&hide_border=true&custom_title=Akshat's%20Contribution%20Graph%20%E2%9D%A4%EF%B8%8F" alt="Contribution Graph" width="100%" />
 
 <br/>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!--  TROPHIES                                                  -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<img src="trophies.svg?v=2" alt="GitHub Trophies" width="790" />
+
+<br/><br/>
 
 <!-- ═══════════════════════════════════════════════════════════ -->
 <!--  SNAKE ANIMATION                                           -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<h2>🐍 Contribution Snake</h2>
+<h2>🐍 Watch the snake eat my contributions</h2>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Akshat685/Akshat685/output/github-snake-dark.svg?v=1" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Akshat685/Akshat685/output/github-snake.svg?v=1" />
-  <img alt="Snake eating contributions" src="https://raw.githubusercontent.com/Akshat685/Akshat685/output/github-snake.svg?v=1" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Akshat685/Akshat685/output/github-snake-dark.svg?v=2" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Akshat685/Akshat685/output/github-snake.svg?v=2" />
+  <img alt="Snake eating contributions" src="https://raw.githubusercontent.com/Akshat685/Akshat685/output/github-snake.svg?v=2" width="100%" />
 </picture>
 
 <br/><br/>
@@ -87,13 +105,13 @@
 <!--  CONNECT                                                   -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<h2>🤝 Connect With Me</h2>
+<h2>🤝 Let's Connect</h2>
 
-<a href="https://github.com/Akshat685"><img src="https://img.shields.io/badge/GitHub-Akshat685-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+<a href="mailto:akshatshettigar2001@gmail.com"><img src="https://img.shields.io/badge/EMAIL-akshatshettigar2001-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 &nbsp;
-<a href="mailto:akshatshettigar2001@gmail.com"><img src="https://img.shields.io/badge/Email-akshatshettigar2001-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+<a href="https://github.com/Akshat685"><img src="https://img.shields.io/badge/GITHUB-Akshat685-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
 &nbsp;
-<a href="https://linkedin.com/in/YOUR-LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="https://linkedin.com/in/YOUR-LINKEDIN"><img src="https://img.shields.io/badge/LINKEDIN-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
 
 <br/><br/>
 
@@ -107,6 +125,6 @@
 
 ---
 
-<sub>⚡ Built with SMIL + CSS animations — no JavaScript needed • Keep coding, keep growing 🚀</sub>
+<sub>⭐ *Always learning, always building.* ❤️</sub>
 
 </div>

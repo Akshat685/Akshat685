@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495 230" width="495" height="230">
-<defs><linearGradient id="cBg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#1a0533"/><stop offset="100%" stop-color="#0d0221"/></linearGradient>
-  <linearGradient id="rG" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#c026d3"/></linearGradient></defs>
-<rect width="495" height="230" rx="12" fill="url(#cBg)" stroke="#4c1d95" stroke-width="1"/>
-<text x="22" y="30" font-size="14" fill="#e2e8f0" font-family="Segoe UI,sans-serif" font-weight="bold">Akshat Shettigar's GitHub Stats</text>
-<line x1="22" y1="40" x2="370" y2="40" stroke="#4c1d95" stroke-width="1"/>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.8s" fill="freeze"/><text x="22" y="58" font-size="12" fill="#94a3b8" font-family="Segoe UI,sans-serif">Total Stars</text><text x="265" y="58" font-size="13" fill="#fbbf24" font-weight="bold" font-family="Segoe UI,sans-serif" text-anchor="end">15</text><rect x="275" y="47" width="100" height="9" rx="4.5" fill="rgba(255,255,255,0.06)"/><rect x="275" y="47" width="0" height="9" rx="4.5" fill="#fbbf24" opacity="0.7"><animate attributeName="width" from="0" to="7" dur="0.8s" begin="1.0s" fill="freeze"/></rect></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.05s" fill="freeze"/><text x="22" y="88" font-size="12" fill="#94a3b8" font-family="Segoe UI,sans-serif">Total Commits (2024)</text><text x="265" y="88" font-size="13" fill="#4ade80" font-weight="bold" font-family="Segoe UI,sans-serif" text-anchor="end">234</text><rect x="275" y="77" width="100" height="9" rx="4.5" fill="rgba(255,255,255,0.06)"/><rect x="275" y="77" width="0" height="9" rx="4.5" fill="#4ade80" opacity="0.7"><animate attributeName="width" from="0" to="100" dur="0.8s" begin="1.25s" fill="freeze"/></rect></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.3s" fill="freeze"/><text x="22" y="118" font-size="12" fill="#94a3b8" font-family="Segoe UI,sans-serif">Total PRs</text><text x="265" y="118" font-size="13" fill="#60a5fa" font-weight="bold" font-family="Segoe UI,sans-serif" text-anchor="end">12</text><rect x="275" y="107" width="100" height="9" rx="4.5" fill="rgba(255,255,255,0.06)"/><rect x="275" y="107" width="0" height="9" rx="4.5" fill="#60a5fa" opacity="0.7"><animate attributeName="width" from="0" to="6" dur="0.8s" begin="1.5s" fill="freeze"/></rect></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.55s" fill="freeze"/><text x="22" y="148" font-size="12" fill="#94a3b8" font-family="Segoe UI,sans-serif">Total Issues</text><text x="265" y="148" font-size="13" fill="#f472b6" font-weight="bold" font-family="Segoe UI,sans-serif" text-anchor="end">8</text><rect x="275" y="137" width="100" height="9" rx="4.5" fill="rgba(255,255,255,0.06)"/><rect x="275" y="137" width="0" height="9" rx="4.5" fill="#f472b6" opacity="0.7"><animate attributeName="width" from="0" to="4" dur="0.8s" begin="1.75s" fill="freeze"/></rect></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.8s" fill="freeze"/><text x="22" y="178" font-size="12" fill="#94a3b8" font-family="Segoe UI,sans-serif">Contributed to</text><text x="265" y="178" font-size="13" fill="#a78bfa" font-weight="bold" font-family="Segoe UI,sans-serif" text-anchor="end">5</text><rect x="275" y="167" width="100" height="9" rx="4.5" fill="rgba(255,255,255,0.06)"/><rect x="275" y="167" width="0" height="9" rx="4.5" fill="#a78bfa" opacity="0.7"><animate attributeName="width" from="0" to="2" dur="0.8s" begin="2.0s" fill="freeze"/></rect></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 230" width="500" height="230">
+<defs><linearGradient id="cBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a0533"/><stop offset="100%" stop-color="#0d0221"/></linearGradient>
+  <linearGradient id="rG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#c026d3"/></linearGradient>
+  <linearGradient id="bdr" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#c026d3"/></linearGradient></defs>
+<rect width="500" height="230" rx="12" fill="url(#cBg)" stroke="url(#bdr)" stroke-width="1.5" stroke-opacity="0.3"/>
+<text x="22" y="30" font-size="14" fill="#f472b6" font-family="Segoe UI,sans-serif" font-weight="bold">&#11088; Akshat Shettigar's GitHub Stats</text>
+<line x1="22" y1="40" x2="280" y2="40" stroke="#4c1d95" stroke-width="1"/>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.8s" fill="freeze"/><text x="22" y="58" font-size="12" fill="#e2e8f0" font-family="Segoe UI,sans-serif">&#11088; Total Stars Earned:</text><text x="280" y="58" font-size="13" fill="#fbbf24" font-weight="bold" font-family="Segoe UI,sans-serif" text-anchor="end">15+</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.0s" fill="freeze"/><text x="22" y="86" font-size="12" fill="#e2e8f0" font-family="Segoe UI,sans-serif">&#128221; Total Commits:</text><text x="280" y="86" font-size="13" fill="#4ade80" font-weight="bold" font-family="Segoe UI,sans-serif" text-anchor="end">234+</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.2s" fill="freeze"/><text x="22" y="114" font-size="12" fill="#e2e8f0" font-family="Segoe UI,sans-serif">&#128193; Public Repos:</text><text x="280" y="114" font-size="13" fill="#60a5fa" font-weight="bold" font-family="Segoe UI,sans-serif" text-anchor="end">8+</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.4s" fill="freeze"/><text x="22" y="142" font-size="12" fill="#e2e8f0" font-family="Segoe UI,sans-serif">&#128101; Followers:</text><text x="280" y="142" font-size="13" fill="#f472b6" font-weight="bold" font-family="Segoe UI,sans-serif" text-anchor="end">10+</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.6s" fill="freeze"/><text x="22" y="170" font-size="12" fill="#e2e8f0" font-family="Segoe UI,sans-serif">&#128296; Projects Built:</text><text x="280" y="170" font-size="13" fill="#a78bfa" font-weight="bold" font-family="Segoe UI,sans-serif" text-anchor="end">6</text></g>
 
-<circle cx="430" cy="130" r="45" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="6"/>
-<circle cx="430" cy="130" r="45" fill="none" stroke="url(#rG)" stroke-width="6"
-        stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round" transform="rotate(-90 430 130)">
-  <animate attributeName="stroke-dashoffset" from="283" to="85" dur="2s" begin="0.5s" fill="freeze"/></circle>
-<text x="430" y="125" text-anchor="middle" font-size="22" fill="#c084fc" font-family="Segoe UI,sans-serif" font-weight="bold" opacity="0">B+<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.8s" fill="freeze"/></text>
-<text x="430" y="143" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="Segoe UI,sans-serif" opacity="0">Rank<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.8s" fill="freeze"/></text>
-<text x="22" y="222" font-size="9" fill="#64748b" font-family="Segoe UI,sans-serif">Updated: Jul 2026</text>
+<circle cx="410" cy="130" r="50" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="7"/>
+<circle cx="410" cy="130" r="50" fill="none" stroke="url(#rG)" stroke-width="7"
+        stroke-dasharray="314" stroke-dashoffset="314" stroke-linecap="round" transform="rotate(-90 410 130)">
+  <animate attributeName="stroke-dashoffset" from="314" to="95" dur="2s" begin="0.5s" fill="freeze"/></circle>
+<text x="410" y="125" text-anchor="middle" font-size="24" fill="#c084fc" font-family="Segoe UI,sans-serif" font-weight="bold" opacity="0">B+<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.8s" fill="freeze"/></text>
+<text x="410" y="145" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="Segoe UI,sans-serif" opacity="0">RANK<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.8s" fill="freeze"/></text>
 </svg>
