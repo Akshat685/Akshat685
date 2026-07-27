@@ -24,8 +24,6 @@
 
 <img src="lanyard.svg?v=2" alt="Developer ID Badge" width="280" />
 
-<sub>~ drag me.. just kidding, I'm an SVG ♥ ~</sub>
-
 </td>
 <td valign="top">
 
