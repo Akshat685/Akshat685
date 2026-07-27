@@ -44,17 +44,24 @@ def banner_svg(theme='dark'):
         stat_card='rgba(124,58,237,0.04)'; stat_border='rgba(196,181,253,0.4)'
         contact_bg='rgba(241,245,249,0.6)'; dots_color='#c4b5fd'
 
-    # ─── Name letters ───
-    name = "Akshat Shettigar"
-    ns = ""
-    for i, ch in enumerate(name):
-        d = round(1.5 + i * 0.12, 2)
-        if ch == " ":
-            ns += " "
-        else:
-            ns += (f'<tspan opacity="0">{ch}'
-                   f'<animate attributeName="opacity" from="0" to="1" dur="0.35s" begin="{d}s" fill="freeze"/>'
-                   f'</tspan>')
+    # ─── Name letters (TWO LINES: "Akshat" + "Shettigar") ───
+    name_line1 = "Akshat"
+    name_line2 = "Shettigar"
+    ns1 = ""
+    ns2 = ""
+    idx = 0
+    for ch in name_line1:
+        d = round(1.5 + idx * 0.12, 2)
+        ns1 += (f'<tspan opacity="0">{ch}'
+                f'<animate attributeName="opacity" from="0" to="1" dur="0.35s" begin="{d}s" fill="freeze"/>'
+                f'</tspan>')
+        idx += 1
+    for ch in name_line2:
+        d = round(1.5 + idx * 0.12, 2)
+        ns2 += (f'<tspan opacity="0">{ch}'
+                f'<animate attributeName="opacity" from="0" to="1" dur="0.35s" begin="{d}s" fill="freeze"/>'
+                f'</tspan>')
+        idx += 1
 
     # ─── Tech pills ───
     skills = [
@@ -65,14 +72,14 @@ def banner_svg(theme='dark'):
     pills = ""
     for i,(sk,cl) in enumerate(skills):
         r,c = i//5, i%5
-        x = 42 + c*116; y = 330 + r*35
+        x = 42 + c*116; y = 350 + r*35
         dl = round(4.5 + i*0.1, 2)
         pills += (f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.35s" begin="{dl}s" fill="freeze"/>'
                   f'<rect x="{x}" y="{y}" width="108" height="27" rx="6" fill="{pbg}" stroke="{cl}" stroke-opacity="{pbo}" stroke-width="1.2"/>'
                   f'<text x="{x+54}" y="{y+17}" text-anchor="middle" font-size="11" fill="{ptx}" font-family="Cascadia Code,Fira Code,monospace" font-weight="500">{sk}</text></g>\n')
 
     # ─── Code editor (positioned top-center) ───
-    CE_X, CE_Y, CE_W, CE_H = 440, 38, 285, 255
+    CE_X, CE_Y, CE_W, CE_H = 540, 38, 265, 250
     code_lines_data = [
         [("#c084fc","function "),("#f9a8d4","buildDreams"),("#94a3b8","() {")],
         [("#94a3b8","  "),("#c084fc","return"),("#94a3b8"," (")],
@@ -102,20 +109,20 @@ def banner_svg(theme='dark'):
     col_w = 128
     for i,(em,lb,val,cl) in enumerate(stat_items):
         cx = 42 + 8 + i*col_w + col_w//2
-        dl = round(6.8 + i*0.2, 1)
+        dl = round(7.0 + i*0.2, 1)
         stats_svg += (f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{dl}s" fill="freeze"/>'
-                      f'<text x="{cx}" y="582" text-anchor="middle" font-size="11" fill="{txd}" font-family="Segoe UI,sans-serif">{em} {lb}</text>'
-                      f'<text x="{cx}" y="615" text-anchor="middle" font-size="26" fill="{cl}" font-weight="bold" font-family="Segoe UI,sans-serif">{val}</text></g>\n')
+                      f'<text x="{cx}" y="598" text-anchor="middle" font-size="11" fill="{txd}" font-family="Segoe UI,sans-serif">{em} {lb}</text>'
+                      f'<text x="{cx}" y="630" text-anchor="middle" font-size="26" fill="{cl}" font-weight="bold" font-family="Segoe UI,sans-serif">{val}</text></g>\n')
 
     # ─── About Me ───
     about_lines = [
         ("&gt;_","I build responsive, user-friendly and impactful web experiences."),
-        ("&#128161;","Always learning, always building."),
+        ("&#128161;","Exploring RAG, LLMs &amp; the future of AI."),
         ("&#9999;","Turning ideas into real world solutions."),
     ]
     about_svg = ""
     for i,(em,ln) in enumerate(about_lines):
-        y = 480 + i*24; dl = round(6.0 + i*0.25, 2)
+        y = 500 + i*24; dl = round(6.2 + i*0.25, 2)
         about_svg += (f'<text x="42" y="{y}" font-size="13" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif">'
                       f'{em} {ln}<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{dl}s" fill="freeze"/></text>\n')
 
@@ -194,13 +201,13 @@ def banner_svg(theme='dark'):
     <animate attributeName="height" from="0" to="{CH_IMG+20}" dur="2.5s" begin="0.5s" fill="freeze"/></rect></clipPath>
   <clipPath id="tc"><rect x="40" y="22" width="0" height="28">
     <animate attributeName="width" from="0" to="370" dur="2s" begin="0.3s" fill="freeze"/></rect></clipPath>
-  <clipPath id="r1c"><rect x="55" y="174" width="0" height="32">
+  <clipPath id="r1c"><rect x="55" y="202" width="0" height="32">
     <animate attributeName="width" values="0;0;290;290;0;0;0;0;0" keyTimes="0;0.02;0.20;0.30;0.33;0.34;0.67;0.68;1" dur="9s" repeatCount="indefinite" begin="3.5s"/></rect></clipPath>
-  <clipPath id="r2c"><rect x="55" y="174" width="0" height="32">
+  <clipPath id="r2c"><rect x="55" y="202" width="0" height="32">
     <animate attributeName="width" values="0;0;0;0;0;180;180;0;0;0;0" keyTimes="0;0.33;0.34;0.35;0.36;0.52;0.63;0.66;0.67;0.68;1" dur="9s" repeatCount="indefinite" begin="3.5s"/></rect></clipPath>
-  <clipPath id="r3c"><rect x="55" y="174" width="0" height="32">
+  <clipPath id="r3c"><rect x="55" y="202" width="0" height="32">
     <animate attributeName="width" values="0;0;0;0;0;0;0;0;310;310;0" keyTimes="0;0.33;0.34;0.66;0.67;0.68;0.69;0.70;0.86;0.96;1" dur="9s" repeatCount="indefinite" begin="3.5s"/></rect></clipPath>
-  <clipPath id="tgc"><rect x="53" y="230" width="0" height="48">
+  <clipPath id="tgc"><rect x="53" y="255" width="0" height="48">
     <animate attributeName="width" from="0" to="340" dur="2s" begin="3.8s" fill="freeze"/></rect></clipPath>
   <pattern id="sl" width="1" height="4" patternUnits="userSpaceOnUse"><rect width="1" height="2" fill="rgba(0,0,0,0.05)"/></pattern>
 </defs>
@@ -243,63 +250,65 @@ def banner_svg(theme='dark'):
   <text x="42" y="92" font-size="20" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif">
     Hi, I'm &#128075;<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.2s" fill="freeze"/></text>
 
-  <!-- Name -->
-  <text x="42" y="155" font-size="52" font-family="Segoe Script,Brush Script MT,Dancing Script,cursive" fill="url(#nG)" font-weight="bold" filter="url(#gl)">
-    {ns}</text>
+  <!-- Name (TWO LINES) -->
+  <text x="42" y="140" font-size="52" font-family="Segoe Script,Brush Script MT,Dancing Script,cursive" fill="url(#nG)" font-weight="bold" filter="url(#gl)">
+    {ns1}</text>
+  <text x="42" y="192" font-size="52" font-family="Segoe Script,Brush Script MT,Dancing Script,cursive" fill="url(#nG)" font-weight="bold" filter="url(#gl)">
+    {ns2}</text>
   <!-- Heart after name -->
-  <text x="430" y="155" font-size="28" opacity="0" fill="{hc}">&#9829;<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="3.4s" fill="freeze"/></text>
+  <text x="345" y="192" font-size="28" opacity="0" fill="{hc}">&#9829;<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="3.4s" fill="freeze"/></text>
 
   <!-- Role cycling -->
-  <text x="42" y="195" font-size="16" fill="{tp}" opacity="0" font-family="Cascadia Code,monospace">
+  <text x="42" y="222" font-size="16" fill="{tp}" opacity="0" font-family="Cascadia Code,monospace">
     &lt;<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="3.5s" fill="freeze"/></text>
-  <text x="56" y="195" font-size="16" fill="{txb}" font-family="Cascadia Code,Fira Code,monospace" clip-path="url(#r1c)">Full Stack Developer</text>
-  <text x="56" y="195" font-size="16" fill="{txb}" font-family="Cascadia Code,Fira Code,monospace" clip-path="url(#r2c)">AI Engineer</text>
-  <text x="56" y="195" font-size="16" fill="{txb}" font-family="Cascadia Code,Fira Code,monospace" clip-path="url(#r3c)">Open Source Contributor</text>
-  <text x="360" y="195" font-size="16" fill="{tp}" opacity="0" font-family="Cascadia Code,monospace">
+  <text x="56" y="222" font-size="16" fill="{txb}" font-family="Cascadia Code,Fira Code,monospace" clip-path="url(#r1c)">Full Stack Developer</text>
+  <text x="56" y="222" font-size="16" fill="{txb}" font-family="Cascadia Code,Fira Code,monospace" clip-path="url(#r2c)">AI Engineer</text>
+  <text x="56" y="222" font-size="16" fill="{txb}" font-family="Cascadia Code,Fira Code,monospace" clip-path="url(#r3c)">Open Source Contributor</text>
+  <text x="360" y="222" font-size="16" fill="{tp}" opacity="0" font-family="Cascadia Code,monospace">
     /&gt;<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="3.5s" fill="freeze"/></text>
   <!-- Typing cursor -->
-  <rect y="179" width="2" height="19" fill="{txb}" class="cur">
+  <rect y="206" width="2" height="19" fill="{txb}" class="cur">
     <animate attributeName="x" values="56;56;300;300;56;56;210;210;56;56;340;340;56"
              keyTimes="0;0.02;0.20;0.30;0.33;0.36;0.52;0.63;0.66;0.70;0.86;0.96;1"
              dur="9s" repeatCount="indefinite" begin="3.5s"/></rect>
 
   <!-- Quote box -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="3.6s" fill="freeze"/>
-    <rect x="42" y="218" width="370" height="60" rx="8" fill="{qbg}" stroke="{qbd}" stroke-width="1" stroke-opacity="0.2"/>
-    <rect x="42" y="218" width="3" height="60" rx="1.5" fill="{qbd}"/></g>
+    <rect x="42" y="248" width="370" height="55" rx="8" fill="{qbg}" stroke="{qbd}" stroke-width="1" stroke-opacity="0.2"/>
+    <rect x="42" y="248" width="3" height="55" rx="1.5" fill="{qbd}"/></g>
   <text clip-path="url(#tgc)" font-size="14" fill="{tx}" font-family="Cascadia Code,monospace">
-    <tspan x="55" y="244">I don't watch anime,</tspan>
-    <tspan x="55" y="266">I code anime.</tspan></text>
+    <tspan x="55" y="272">I don't just use AI,</tspan>
+    <tspan x="55" y="292">I build it.</tspan></text>
 
   <!-- Tech I Know -->
-  <text x="42" y="312" font-size="14" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif" font-weight="bold">
+  <text x="42" y="335" font-size="14" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif" font-weight="bold">
     &#9881; Tech I Know<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="4.3s" fill="freeze"/></text>
   {pills}
 
   <!-- About Me -->
-  <text x="42" y="460" font-size="14" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif" font-weight="bold">
+  <text x="42" y="478" font-size="14" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif" font-weight="bold">
     &#10084; About Me<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="5.8s" fill="freeze"/></text>
   {about_svg}
 
   <!-- Stats row card -->
-  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="6.5s" fill="freeze"/>
-    <rect x="42" y="555" width="520" height="82" rx="10" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="6.8s" fill="freeze"/>
+    <rect x="42" y="572" width="520" height="82" rx="10" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
     <!-- Dividers -->
-    <line x1="172" y1="568" x2="172" y2="630" stroke="{stat_border}" stroke-width="1"/>
-    <line x1="302" y1="568" x2="302" y2="630" stroke="{stat_border}" stroke-width="1"/>
-    <line x1="432" y1="568" x2="432" y2="630" stroke="{stat_border}" stroke-width="1"/></g>
+    <line x1="172" y1="585" x2="172" y2="647" stroke="{stat_border}" stroke-width="1"/>
+    <line x1="302" y1="585" x2="302" y2="647" stroke="{stat_border}" stroke-width="1"/>
+    <line x1="432" y1="585" x2="432" y2="647" stroke="{stat_border}" stroke-width="1"/></g>
   {stats_svg}
 
   <!-- Contact row -->
-  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.5s" fill="freeze"/>
-    <text x="42" y="680" font-size="11" fill="{txd}" font-family="Segoe UI,sans-serif">
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.8s" fill="freeze"/>
+    <text x="42" y="695" font-size="11" fill="{txd}" font-family="Segoe UI,sans-serif">
       <tspan fill="{tp}">&#128231;</tspan> Akshat685
       <tspan dx="20" fill="{tp}">&#9993;</tspan> akshatshettigar2001@gmail.com
       <tspan dx="20" fill="#4ade80">&#9679;</tspan> open to collaborate</text></g>
 
   <!-- Bottom quote -->
-  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8s" fill="freeze"/>
-    <text x="1240" y="820" text-anchor="end" font-size="13" fill="{txd}" font-style="italic" font-family="Segoe UI,Georgia,serif">
+  <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.2s" fill="freeze"/>
+    <text x="1240" y="825" text-anchor="end" font-size="13" fill="{txd}" font-style="italic" font-family="Segoe UI,Georgia,serif">
       "Turning caffeine into code &amp; ideas into interfaces." <tspan fill="{hc}">&#10084;</tspan></text></g>
 
   <!-- ══════ CODE EDITOR (overlays character) ══════ -->
@@ -315,10 +324,10 @@ def banner_svg(theme='dark'):
 
   <!-- ══════ NEON SIGN (top-right) ══════ -->
   <g class="neo">
-    <rect x="810" y="38" width="210" height="100" rx="12" fill="none" stroke="{nt}" stroke-width="1.2" stroke-opacity="0.35"/>
-    <text x="915" y="72" text-anchor="middle" font-size="28" fill="{tp}" font-family="Cascadia Code,monospace" font-weight="bold" filter="url(#ng)">&lt;/&gt;</text>
-    <text x="915" y="100" text-anchor="middle" font-size="13" fill="{nt}" font-family="Cascadia Code,monospace" font-weight="bold" letter-spacing="2" filter="url(#ng)">KEEP CODING</text>
-    <text x="915" y="120" text-anchor="middle" font-size="13" fill="{nt}" font-family="Cascadia Code,monospace" font-weight="bold" letter-spacing="2" filter="url(#ng)">KEEP GROWING</text></g>
+    <rect x="850" y="38" width="200" height="100" rx="12" fill="none" stroke="{nt}" stroke-width="1.2" stroke-opacity="0.35"/>
+    <text x="950" y="72" text-anchor="middle" font-size="28" fill="{tp}" font-family="Cascadia Code,monospace" font-weight="bold" filter="url(#ng)">&lt;/&gt;</text>
+    <text x="950" y="100" text-anchor="middle" font-size="13" fill="{nt}" font-family="Cascadia Code,monospace" font-weight="bold" letter-spacing="2" filter="url(#ng)">KEEP CODING</text>
+    <text x="950" y="120" text-anchor="middle" font-size="13" fill="{nt}" font-family="Cascadia Code,monospace" font-weight="bold" letter-spacing="2" filter="url(#ng)">KEEP GROWING</text></g>
 
   <!-- Continuous scanner -->
   <rect x="0" y="0" width="1280" height="4" fill="url(#slG)" filter="url(#sg)" opacity="0.3">
