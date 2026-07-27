@@ -188,9 +188,13 @@ def banner_svg(theme='dark'):
     <stop offset="50%" stop-color="#c026d3"><animate attributeName="stop-color" values="#c026d3;#f472b6;#7c3aed;#c026d3" dur="4s" repeatCount="indefinite"/></stop>
     <stop offset="100%" stop-color="#f472b6"><animate attributeName="stop-color" values="#f472b6;#7c3aed;#c026d3;#f472b6" dur="4s" repeatCount="indefinite"/></stop></linearGradient>
   <linearGradient id="slG" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#7c3aed" stop-opacity="0"/><stop offset="40%" stop-color="#a855f7" stop-opacity="0.5"/>
-    <stop offset="50%" stop-color="#c084fc" stop-opacity="1"/><stop offset="60%" stop-color="#a855f7" stop-opacity="0.5"/>
-    <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/></linearGradient>
+    <stop offset="0%" stop-color="#c026d3" stop-opacity="0"/>
+    <stop offset="30%" stop-color="#a855f7" stop-opacity="0.15"/>
+    <stop offset="45%" stop-color="#c026d3" stop-opacity="0.35"/>
+    <stop offset="50%" stop-color="#f472b6" stop-opacity="0.5"/>
+    <stop offset="55%" stop-color="#c026d3" stop-opacity="0.35"/>
+    <stop offset="70%" stop-color="#a855f7" stop-opacity="0.15"/>
+    <stop offset="100%" stop-color="#c026d3" stop-opacity="0"/></linearGradient>
   <filter id="gl"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   <filter id="ng"><feGaussianBlur stdDeviation="4" result="b"/><feFlood flood-color="{nt}" flood-opacity="0.5" result="c"/>
     <feComposite in="c" in2="b" operator="in" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
@@ -234,7 +238,7 @@ def banner_svg(theme='dark'):
            x="{CX}" y="{CY}" width="{CW}" height="{CH_IMG}" opacity="0.95"/>
     <rect x="{CX}" y="{CY}" width="{CW}" height="{CH_IMG}" fill="url(#sl)" opacity="0.15"/></g>
   <!-- Reveal scan line -->
-  <rect x="{CX-10}" y="{CY}" width="{CW+30}" height="7" fill="url(#slG)" filter="url(#sg)" opacity="0">
+  <rect x="0" y="{CY}" width="1280" height="50" fill="url(#slG)" filter="url(#sg)" opacity="0">
     <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.05;0.85;1" dur="2.8s" begin="0.3s" fill="freeze"/>
     <animate attributeName="y" from="{CY}" to="{CY+CH_IMG}" dur="2.5s" begin="0.5s" fill="freeze"/></rect>
 
@@ -341,8 +345,8 @@ def banner_svg(theme='dark'):
     <text x="1127" y="120" text-anchor="middle" font-size="13" fill="{nt}" font-family="Cascadia Code,monospace" font-weight="bold" letter-spacing="2" filter="url(#ng)">KEEP GROWING</text></g>
 
   <!-- Continuous scanner -->
-  <rect x="0" y="0" width="1280" height="4" fill="url(#slG)" filter="url(#sg)" opacity="0.3">
-    <animate attributeName="y" from="0" to="{H}" dur="3.5s" begin="3.5s" repeatCount="indefinite"/></rect>
+  <rect x="0" y="-50" width="1280" height="50" fill="url(#slG)" filter="url(#sg)" opacity="0.5">
+    <animate attributeName="y" from="-50" to="{H}" dur="6s" begin="3.5s" repeatCount="indefinite"/></rect>
 
   {hearts}
   {sparkles}
