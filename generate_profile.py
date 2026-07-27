@@ -82,13 +82,13 @@ def banner_svg(theme='dark'):
     CE_X, CE_Y, CE_W, CE_H = 540, 38, 265, 250
     code_lines_data = [
         [("#c084fc","function "),("#f9a8d4","buildDreams"),("#94a3b8","() {")],
-        [("#94a3b8","  "),("#c084fc","return"),("#94a3b8"," (")],
-        [("#94a3b8","    &lt;div className="),("#a5f3fc","\"dreams\""),("#94a3b8","&gt;")],
-        [("#94a3b8","      &lt;"),("#f9a8d4","Code"),("#94a3b8"," /&gt;")],
-        [("#94a3b8","      &lt;"),("#f9a8d4","Coffee"),("#94a3b8"," /&gt;")],
-        [("#94a3b8","      &lt;"),("#f9a8d4","Repeat"),("#94a3b8"," /&gt;")],
-        [("#94a3b8","      &lt;"),("#f9a8d4","Success"),("#94a3b8"," /&gt;")],
-        [("#94a3b8","    &lt;/div&gt;);")],
+        [("#94a3b8","&#160;&#160;"),("#c084fc","return"),("#94a3b8"," (")],
+        [("#94a3b8","&#160;&#160;&#160;&#160;&lt;div className="),("#a5f3fc","\"dreams\""),("#94a3b8","&gt;")],
+        [("#94a3b8","&#160;&#160;&#160;&#160;&#160;&#160;&lt;"),("#f9a8d4","Code"),("#94a3b8"," /&gt;")],
+        [("#94a3b8","&#160;&#160;&#160;&#160;&#160;&#160;&lt;"),("#f9a8d4","Coffee"),("#94a3b8"," /&gt;")],
+        [("#94a3b8","&#160;&#160;&#160;&#160;&#160;&#160;&lt;"),("#f9a8d4","Repeat"),("#94a3b8"," /&gt;")],
+        [("#94a3b8","&#160;&#160;&#160;&#160;&#160;&#160;&lt;"),("#f9a8d4","Success"),("#94a3b8"," /&gt;")],
+        [("#94a3b8","&#160;&#160;&#160;&#160;&lt;/div&gt;);")],
         [("#94a3b8","} "),("#64748b","// export default")],
     ]
     editor_svg = ""
@@ -278,7 +278,7 @@ def banner_svg(theme='dark'):
     <rect x="42" y="248" width="3" height="55" rx="1.5" fill="{qbd}"/></g>
   <text clip-path="url(#tgc)" font-size="14" fill="{tx}" font-family="Cascadia Code,monospace">
     <tspan x="55" y="272">I don't just use AI,</tspan>
-    <tspan x="55" y="292">I build it.</tspan></text>
+    <tspan x="55" y="292">I code it.</tspan></text>
 
   <!-- Tech I Know -->
   <text x="42" y="335" font-size="14" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif" font-weight="bold">
@@ -301,14 +301,25 @@ def banner_svg(theme='dark'):
 
   <!-- Contact row -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.8s" fill="freeze"/>
-    <text x="42" y="695" font-size="11" fill="{txd}" font-family="Segoe UI,sans-serif">
-      <tspan fill="{tp}">&#128231;</tspan> Akshat685
-      <tspan dx="20" fill="{tp}">&#9993;</tspan> akshatshettigar2001@gmail.com
-      <tspan dx="20" fill="#4ade80">&#9679;</tspan> open to collaborate</text></g>
+    <!-- Github -->
+    <rect x="42" y="685" width="130" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
+    <text x="60" y="706" font-size="14" fill="{tx}">&#128231;</text>
+    <text x="82" y="705" font-size="13" fill="{txd}" font-family="Segoe UI,sans-serif">Akshat685</text>
+    
+    <!-- Email -->
+    <rect x="182" y="685" width="240" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
+    <text x="200" y="706" font-size="14" fill="{tx}">&#9993;</text>
+    <text x="222" y="705" font-size="13" fill="{txd}" font-family="Segoe UI,sans-serif">akshatshettigar2001@gmail.com</text>
+
+    <!-- Collaborate -->
+    <rect x="432" y="685" width="170" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
+    <text x="450" y="705" font-size="12" fill="#4ade80">&#9679;</text>
+    <text x="466" y="705" font-size="13" fill="{txd}" font-family="Segoe UI,sans-serif">open to collaborate</text>
+  </g>
 
   <!-- Bottom quote -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.2s" fill="freeze"/>
-    <text x="1240" y="825" text-anchor="end" font-size="13" fill="{txd}" font-style="italic" font-family="Segoe UI,Georgia,serif">
+    <text x="1240" y="822" text-anchor="end" font-size="17" fill="{txd}" font-style="italic" font-family="Segoe UI,Georgia,serif">
       "Turning caffeine into code &amp; ideas into interfaces." <tspan fill="{hc}">&#10084;</tspan></text></g>
 
   <!-- ══════ CODE EDITOR (overlays character) ══════ -->
@@ -324,10 +335,10 @@ def banner_svg(theme='dark'):
 
   <!-- ══════ NEON SIGN (top-right) ══════ -->
   <g class="neo">
-    <rect x="850" y="38" width="200" height="100" rx="12" fill="none" stroke="{nt}" stroke-width="1.2" stroke-opacity="0.35"/>
-    <text x="950" y="72" text-anchor="middle" font-size="28" fill="{tp}" font-family="Cascadia Code,monospace" font-weight="bold" filter="url(#ng)">&lt;/&gt;</text>
-    <text x="950" y="100" text-anchor="middle" font-size="13" fill="{nt}" font-family="Cascadia Code,monospace" font-weight="bold" letter-spacing="2" filter="url(#ng)">KEEP CODING</text>
-    <text x="950" y="120" text-anchor="middle" font-size="13" fill="{nt}" font-family="Cascadia Code,monospace" font-weight="bold" letter-spacing="2" filter="url(#ng)">KEEP GROWING</text></g>
+    <rect x="1015" y="38" width="225" height="100" rx="12" fill="none" stroke="{nt}" stroke-width="1.2" stroke-opacity="0.35"/>
+    <text x="1127" y="72" text-anchor="middle" font-size="28" fill="{tp}" font-family="Cascadia Code,monospace" font-weight="bold" filter="url(#ng)">&lt;/&gt;</text>
+    <text x="1127" y="100" text-anchor="middle" font-size="13" fill="{nt}" font-family="Cascadia Code,monospace" font-weight="bold" letter-spacing="2" filter="url(#ng)">KEEP CODING</text>
+    <text x="1127" y="120" text-anchor="middle" font-size="13" fill="{nt}" font-family="Cascadia Code,monospace" font-weight="bold" letter-spacing="2" filter="url(#ng)">KEEP GROWING</text></g>
 
   <!-- Continuous scanner -->
   <rect x="0" y="0" width="1280" height="4" fill="url(#slG)" filter="url(#sg)" opacity="0.3">

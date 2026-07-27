@@ -201,7 +201,7 @@
     <rect x="42" y="248" width="3" height="55" rx="1.5" fill="#c026d3"/></g>
   <text clip-path="url(#tgc)" font-size="14" fill="#e2e8f0" font-family="Cascadia Code,monospace">
     <tspan x="55" y="272">I don't just use AI,</tspan>
-    <tspan x="55" y="292">I build it.</tspan></text>
+    <tspan x="55" y="292">I code it.</tspan></text>
 
   <!-- Tech I Know -->
   <text x="42" y="335" font-size="14" fill="#e2e8f0" opacity="0" font-family="Segoe UI,sans-serif" font-weight="bold">
@@ -246,14 +246,25 @@
 
   <!-- Contact row -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.8s" fill="freeze"/>
-    <text x="42" y="695" font-size="11" fill="#94a3b8" font-family="Segoe UI,sans-serif">
-      <tspan fill="#c084fc">&#128231;</tspan> Akshat685
-      <tspan dx="20" fill="#c084fc">&#9993;</tspan> akshatshettigar2001@gmail.com
-      <tspan dx="20" fill="#4ade80">&#9679;</tspan> open to collaborate</text></g>
+    <!-- Github -->
+    <rect x="42" y="685" width="130" height="32" rx="16" fill="rgba(124,58,237,0.06)" stroke="rgba(76,29,149,0.4)" stroke-width="1"/>
+    <text x="60" y="706" font-size="14" fill="#e2e8f0">&#128231;</text>
+    <text x="82" y="705" font-size="13" fill="#94a3b8" font-family="Segoe UI,sans-serif">Akshat685</text>
+    
+    <!-- Email -->
+    <rect x="182" y="685" width="240" height="32" rx="16" fill="rgba(124,58,237,0.06)" stroke="rgba(76,29,149,0.4)" stroke-width="1"/>
+    <text x="200" y="706" font-size="14" fill="#e2e8f0">&#9993;</text>
+    <text x="222" y="705" font-size="13" fill="#94a3b8" font-family="Segoe UI,sans-serif">akshatshettigar2001@gmail.com</text>
+
+    <!-- Collaborate -->
+    <rect x="432" y="685" width="170" height="32" rx="16" fill="rgba(124,58,237,0.06)" stroke="rgba(76,29,149,0.4)" stroke-width="1"/>
+    <text x="450" y="705" font-size="12" fill="#4ade80">&#9679;</text>
+    <text x="466" y="705" font-size="13" fill="#94a3b8" font-family="Segoe UI,sans-serif">open to collaborate</text>
+  </g>
 
   <!-- Bottom quote -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="8.2s" fill="freeze"/>
-    <text x="1240" y="825" text-anchor="end" font-size="13" fill="#94a3b8" font-style="italic" font-family="Segoe UI,Georgia,serif">
+    <text x="1240" y="822" text-anchor="end" font-size="17" fill="#94a3b8" font-style="italic" font-family="Segoe UI,Georgia,serif">
       "Turning caffeine into code &amp; ideas into interfaces." <tspan fill="#f472b6">&#10084;</tspan></text></g>
 
   <!-- ══════ CODE EDITOR (overlays character) ══════ -->
@@ -266,22 +277,22 @@
     <circle cx="588" cy="51" r="4.5" fill="#22c55e" opacity="0.8"/>
     <text x="700" y="55" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="Segoe UI,sans-serif">dreams.jsx</text></g>
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="7.5s" fill="freeze"/><text x="558" y="90" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#c084fc">function </tspan><tspan fill="#f9a8d4">buildDreams</tspan><tspan fill="#94a3b8">() {</tspan></text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="7.9s" fill="freeze"/><text x="558" y="112" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">  </tspan><tspan fill="#c084fc">return</tspan><tspan fill="#94a3b8"> (</tspan></text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="8.3s" fill="freeze"/><text x="558" y="134" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">    &lt;div className=</tspan><tspan fill="#a5f3fc">"dreams"</tspan><tspan fill="#94a3b8">&gt;</tspan></text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="8.7s" fill="freeze"/><text x="558" y="156" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">      &lt;</tspan><tspan fill="#f9a8d4">Code</tspan><tspan fill="#94a3b8"> /&gt;</tspan></text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="9.1s" fill="freeze"/><text x="558" y="178" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">      &lt;</tspan><tspan fill="#f9a8d4">Coffee</tspan><tspan fill="#94a3b8"> /&gt;</tspan></text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="9.5s" fill="freeze"/><text x="558" y="200" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">      &lt;</tspan><tspan fill="#f9a8d4">Repeat</tspan><tspan fill="#94a3b8"> /&gt;</tspan></text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="9.9s" fill="freeze"/><text x="558" y="222" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">      &lt;</tspan><tspan fill="#f9a8d4">Success</tspan><tspan fill="#94a3b8"> /&gt;</tspan></text></g>
-<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="10.3s" fill="freeze"/><text x="558" y="244" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">    &lt;/div&gt;);</tspan></text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="7.9s" fill="freeze"/><text x="558" y="112" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">&#160;&#160;</tspan><tspan fill="#c084fc">return</tspan><tspan fill="#94a3b8"> (</tspan></text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="8.3s" fill="freeze"/><text x="558" y="134" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">&#160;&#160;&#160;&#160;&lt;div className=</tspan><tspan fill="#a5f3fc">"dreams"</tspan><tspan fill="#94a3b8">&gt;</tspan></text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="8.7s" fill="freeze"/><text x="558" y="156" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">&#160;&#160;&#160;&#160;&#160;&#160;&lt;</tspan><tspan fill="#f9a8d4">Code</tspan><tspan fill="#94a3b8"> /&gt;</tspan></text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="9.1s" fill="freeze"/><text x="558" y="178" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">&#160;&#160;&#160;&#160;&#160;&#160;&lt;</tspan><tspan fill="#f9a8d4">Coffee</tspan><tspan fill="#94a3b8"> /&gt;</tspan></text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="9.5s" fill="freeze"/><text x="558" y="200" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">&#160;&#160;&#160;&#160;&#160;&#160;&lt;</tspan><tspan fill="#f9a8d4">Repeat</tspan><tspan fill="#94a3b8"> /&gt;</tspan></text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="9.9s" fill="freeze"/><text x="558" y="222" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">&#160;&#160;&#160;&#160;&#160;&#160;&lt;</tspan><tspan fill="#f9a8d4">Success</tspan><tspan fill="#94a3b8"> /&gt;</tspan></text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="10.3s" fill="freeze"/><text x="558" y="244" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">&#160;&#160;&#160;&#160;&lt;/div&gt;);</tspan></text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="10.7s" fill="freeze"/><text x="558" y="266" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace"><tspan fill="#94a3b8">} </tspan><tspan fill="#64748b">// export default</tspan></text></g>
 
 
   <!-- ══════ NEON SIGN (top-right) ══════ -->
   <g class="neo">
-    <rect x="850" y="38" width="200" height="100" rx="12" fill="none" stroke="#f9a8d4" stroke-width="1.2" stroke-opacity="0.35"/>
-    <text x="950" y="72" text-anchor="middle" font-size="28" fill="#c084fc" font-family="Cascadia Code,monospace" font-weight="bold" filter="url(#ng)">&lt;/&gt;</text>
-    <text x="950" y="100" text-anchor="middle" font-size="13" fill="#f9a8d4" font-family="Cascadia Code,monospace" font-weight="bold" letter-spacing="2" filter="url(#ng)">KEEP CODING</text>
-    <text x="950" y="120" text-anchor="middle" font-size="13" fill="#f9a8d4" font-family="Cascadia Code,monospace" font-weight="bold" letter-spacing="2" filter="url(#ng)">KEEP GROWING</text></g>
+    <rect x="1015" y="38" width="225" height="100" rx="12" fill="none" stroke="#f9a8d4" stroke-width="1.2" stroke-opacity="0.35"/>
+    <text x="1127" y="72" text-anchor="middle" font-size="28" fill="#c084fc" font-family="Cascadia Code,monospace" font-weight="bold" filter="url(#ng)">&lt;/&gt;</text>
+    <text x="1127" y="100" text-anchor="middle" font-size="13" fill="#f9a8d4" font-family="Cascadia Code,monospace" font-weight="bold" letter-spacing="2" filter="url(#ng)">KEEP CODING</text>
+    <text x="1127" y="120" text-anchor="middle" font-size="13" fill="#f9a8d4" font-family="Cascadia Code,monospace" font-weight="bold" letter-spacing="2" filter="url(#ng)">KEEP GROWING</text></g>
 
   <!-- Continuous scanner -->
   <rect x="0" y="0" width="1280" height="4" fill="url(#slG)" filter="url(#sg)" opacity="0.3">
