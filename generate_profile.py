@@ -76,10 +76,10 @@ def banner_svg(theme='dark'):
         dl = round(4.5 + i*0.1, 2)
         pills += (f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.35s" begin="{dl}s" fill="freeze"/>'
                   f'<rect x="{x}" y="{y}" width="108" height="27" rx="6" fill="{pbg}" stroke="{cl}" stroke-opacity="{pbo}" stroke-width="1.2"/>'
-                  f'<text x="{x+54}" y="{y+17}" text-anchor="middle" font-size="11" fill="{ptx}" font-family="Cascadia Code,Fira Code,monospace" font-weight="500">{sk}</text></g>\n')
+                  f'<text x="{x+54}" y="{y+18}" text-anchor="middle" font-size="13" fill="{ptx}" font-family="Cascadia Code,Fira Code,monospace" font-weight="500">{sk}</text></g>\n')
 
     # ─── Code editor (positioned top-center) ───
-    CE_X, CE_Y, CE_W, CE_H = 540, 38, 265, 250
+    CE_X, CE_Y, CE_W, CE_H = 510, 38, 285, 265
     code_lines_data = [
         [("#c084fc","function "),("#f9a8d4","buildDreams"),("#94a3b8","() {")],
         [("#94a3b8","&#160;&#160;"),("#c084fc","return"),("#94a3b8"," (")],
@@ -93,10 +93,10 @@ def banner_svg(theme='dark'):
     ]
     editor_svg = ""
     for i,parts in enumerate(code_lines_data):
-        yp = CE_Y + 52 + i*22; dl = round(7.5 + i*0.4, 2)
+        yp = CE_Y + 52 + i*24; dl = round(7.5 + i*0.4, 2)
         txt = "".join(f'<tspan fill="{c}">{t}</tspan>' for c,t in parts)
         editor_svg += (f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="{dl}s" fill="freeze"/>'
-                       f'<text x="{CE_X+18}" y="{yp}" font-size="11.5" font-family="Cascadia Code,Fira Code,Consolas,monospace">{txt}</text></g>\n')
+                       f'<text x="{CE_X+18}" y="{yp}" font-size="15" font-family="Cascadia Code,Fira Code,Consolas,monospace" xml:space="preserve">{txt}</text></g>\n')
 
     # ─── Stats row ───
     stat_items = [
@@ -123,7 +123,7 @@ def banner_svg(theme='dark'):
     about_svg = ""
     for i,(em,ln) in enumerate(about_lines):
         y = 500 + i*24; dl = round(6.2 + i*0.25, 2)
-        about_svg += (f'<text x="42" y="{y}" font-size="13" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif">'
+        about_svg += (f'<text x="42" y="{y}" font-size="15" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif">'
                       f'{em} {ln}<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{dl}s" fill="freeze"/></text>\n')
 
     # ─── Particles ───
@@ -200,7 +200,7 @@ def banner_svg(theme='dark'):
   <clipPath id="hrc"><rect x="{CX}" y="{CY}" width="{CW+20}" height="0">
     <animate attributeName="height" from="0" to="{CH_IMG+20}" dur="2.5s" begin="0.5s" fill="freeze"/></rect></clipPath>
   <clipPath id="tc"><rect x="40" y="22" width="0" height="28">
-    <animate attributeName="width" from="0" to="370" dur="2s" begin="0.3s" fill="freeze"/></rect></clipPath>
+    <animate attributeName="width" from="0" to="480" dur="2s" begin="0.3s" fill="freeze"/></rect></clipPath>
   <clipPath id="r1c"><rect x="55" y="202" width="0" height="32">
     <animate attributeName="width" values="0;0;290;290;0;0;0;0;0" keyTimes="0;0.02;0.20;0.30;0.33;0.34;0.67;0.68;1" dur="9s" repeatCount="indefinite" begin="3.5s"/></rect></clipPath>
   <clipPath id="r2c"><rect x="55" y="202" width="0" height="32">
@@ -241,13 +241,13 @@ def banner_svg(theme='dark'):
   <!-- ══════ LEFT COLUMN ══════ -->
 
   <!-- Terminal -->
-  <text x="42" y="45" font-size="14" font-family="Cascadia Code,Fira Code,Consolas,monospace" fill="{tg}" clip-path="url(#tc)">
-    <tspan fill="{tp}">user@dev</tspan><tspan fill="{txd}">:</tspan><tspan fill="#60a5fa">~</tspan><tspan fill="{txd}">$ </tspan><tspan fill="{tg}">cat README.md</tspan></text>
-  <rect x="42" y="30" width="8" height="17" fill="{tg}" class="cur">
-    <animate attributeName="x" from="42" to="370" dur="2s" begin="0.3s" fill="freeze"/></rect>
+  <text x="42" y="45" font-size="16" font-family="Cascadia Code,Fira Code,Consolas,monospace" fill="{tg}" clip-path="url(#tc)">
+    <tspan fill="{tp}">akshat@fullstackdev</tspan><tspan fill="{txd}">:</tspan><tspan fill="#60a5fa">~</tspan><tspan fill="{txd}">$ </tspan><tspan fill="{tg}">cat README.md</tspan></text>
+  <rect x="42" y="28" width="8" height="20" fill="{tg}" class="cur">
+    <animate attributeName="x" from="42" to="460" dur="2s" begin="0.3s" fill="freeze"/></rect>
 
   <!-- Greeting -->
-  <text x="42" y="92" font-size="20" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif">
+  <text x="42" y="92" font-size="24" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif">
     Hi, I'm &#128075;<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.2s" fill="freeze"/></text>
 
   <!-- Name (TWO LINES) -->
@@ -259,15 +259,15 @@ def banner_svg(theme='dark'):
   <text x="345" y="192" font-size="28" opacity="0" fill="{hc}">&#9829;<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="3.4s" fill="freeze"/></text>
 
   <!-- Role cycling -->
-  <text x="42" y="222" font-size="16" fill="{tp}" opacity="0" font-family="Cascadia Code,monospace">
+  <text x="42" y="222" font-size="18" fill="{tp}" opacity="0" font-family="Cascadia Code,monospace">
     &lt;<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="3.5s" fill="freeze"/></text>
-  <text x="56" y="222" font-size="16" fill="{txb}" font-family="Cascadia Code,Fira Code,monospace" clip-path="url(#r1c)">Full Stack Developer</text>
-  <text x="56" y="222" font-size="16" fill="{txb}" font-family="Cascadia Code,Fira Code,monospace" clip-path="url(#r2c)">AI Engineer</text>
-  <text x="56" y="222" font-size="16" fill="{txb}" font-family="Cascadia Code,Fira Code,monospace" clip-path="url(#r3c)">Open Source Contributor</text>
-  <text x="360" y="222" font-size="16" fill="{tp}" opacity="0" font-family="Cascadia Code,monospace">
+  <text x="58" y="222" font-size="18" fill="{txb}" font-family="Cascadia Code,Fira Code,monospace" clip-path="url(#r1c)">Full Stack Developer</text>
+  <text x="58" y="222" font-size="18" fill="{txb}" font-family="Cascadia Code,Fira Code,monospace" clip-path="url(#r2c)">AI Engineer</text>
+  <text x="58" y="222" font-size="18" fill="{txb}" font-family="Cascadia Code,Fira Code,monospace" clip-path="url(#r3c)">Open Source Contributor</text>
+  <text x="360" y="222" font-size="18" fill="{tp}" opacity="0" font-family="Cascadia Code,monospace">
     /&gt;<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="3.5s" fill="freeze"/></text>
   <!-- Typing cursor -->
-  <rect y="206" width="2" height="19" fill="{txb}" class="cur">
+  <rect y="206" width="2" height="21" fill="{txb}" class="cur">
     <animate attributeName="x" values="56;56;300;300;56;56;210;210;56;56;340;340;56"
              keyTimes="0;0.02;0.20;0.30;0.33;0.36;0.52;0.63;0.66;0.70;0.86;0.96;1"
              dur="9s" repeatCount="indefinite" begin="3.5s"/></rect>
@@ -304,17 +304,17 @@ def banner_svg(theme='dark'):
     <!-- Github -->
     <rect x="42" y="685" width="130" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
     <text x="60" y="706" font-size="14" fill="{tx}">&#128231;</text>
-    <text x="82" y="705" font-size="13" fill="{txd}" font-family="Segoe UI,sans-serif">Akshat685</text>
+    <text x="82" y="705" font-size="14" fill="{txd}" font-family="Segoe UI,sans-serif">Akshat685</text>
     
     <!-- Email -->
-    <rect x="182" y="685" width="240" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
+    <rect x="182" y="685" width="260" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
     <text x="200" y="706" font-size="14" fill="{tx}">&#9993;</text>
-    <text x="222" y="705" font-size="13" fill="{txd}" font-family="Segoe UI,sans-serif">akshatshettigar2001@gmail.com</text>
+    <text x="222" y="705" font-size="14" fill="{txd}" font-family="Segoe UI,sans-serif">akshatshettigar2001@gmail.com</text>
 
     <!-- Collaborate -->
-    <rect x="432" y="685" width="170" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
-    <text x="450" y="705" font-size="12" fill="#4ade80">&#9679;</text>
-    <text x="466" y="705" font-size="13" fill="{txd}" font-family="Segoe UI,sans-serif">open to collaborate</text>
+    <rect x="452" y="685" width="180" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
+    <text x="470" y="705" font-size="12" fill="#4ade80">&#9679;</text>
+    <text x="486" y="705" font-size="14" fill="{txd}" font-family="Segoe UI,sans-serif">open to collaborate</text>
   </g>
 
   <!-- Bottom quote -->
@@ -330,7 +330,7 @@ def banner_svg(theme='dark'):
     <circle cx="{CE_X+18}" cy="{CE_Y+13}" r="4.5" fill="#ef4444" opacity="0.8"/>
     <circle cx="{CE_X+33}" cy="{CE_Y+13}" r="4.5" fill="#f59e0b" opacity="0.8"/>
     <circle cx="{CE_X+48}" cy="{CE_Y+13}" r="4.5" fill="#22c55e" opacity="0.8"/>
-    <text x="{CE_X+160}" y="{CE_Y+17}" text-anchor="middle" font-size="10" fill="{txd}" font-family="Segoe UI,sans-serif">dreams.jsx</text></g>
+    <text x="{CE_X+142}" y="{CE_Y+20}" text-anchor="middle" font-size="13" fill="{txd}" font-family="Segoe UI,sans-serif">dreams.jsx</text></g>
   {editor_svg}
 
   <!-- ══════ NEON SIGN (top-right) ══════ -->
