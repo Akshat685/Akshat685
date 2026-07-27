@@ -72,14 +72,14 @@ def banner_svg(theme='dark'):
     pills = ""
     for i,(sk,cl) in enumerate(skills):
         r,c = i//5, i%5
-        x = 42 + c*116; y = 350 + r*35
+        x = 42 + c*116; y = 370 + r*35
         dl = round(4.5 + i*0.1, 2)
         pills += (f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.35s" begin="{dl}s" fill="freeze"/>'
                   f'<rect x="{x}" y="{y}" width="108" height="27" rx="6" fill="{pbg}" stroke="{cl}" stroke-opacity="{pbo}" stroke-width="1.2"/>'
                   f'<text x="{x+54}" y="{y+18}" text-anchor="middle" font-size="13" fill="{ptx}" font-family="Cascadia Code,Fira Code,monospace" font-weight="500">{sk}</text></g>\n')
 
     # ─── Code editor (positioned top-center) ───
-    CE_X, CE_Y, CE_W, CE_H = 510, 38, 285, 265
+    CE_X, CE_Y, CE_W, CE_H = 510, 38, 265, 255
     code_lines_data = [
         [("#c084fc","function "),("#f9a8d4","buildDreams"),("#94a3b8","() {")],
         [("#94a3b8","&#160;&#160;"),("#c084fc","return"),("#94a3b8"," (")],
@@ -93,10 +93,10 @@ def banner_svg(theme='dark'):
     ]
     editor_svg = ""
     for i,parts in enumerate(code_lines_data):
-        yp = CE_Y + 52 + i*24; dl = round(7.5 + i*0.4, 2)
+        yp = CE_Y + 52 + i*22; dl = round(7.5 + i*0.4, 2)
         txt = "".join(f'<tspan fill="{c}">{t}</tspan>' for c,t in parts)
         editor_svg += (f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="{dl}s" fill="freeze"/>'
-                       f'<text x="{CE_X+18}" y="{yp}" font-size="15" font-family="Cascadia Code,Fira Code,Consolas,monospace" xml:space="preserve">{txt}</text></g>\n')
+                       f'<text x="{CE_X+18}" y="{yp}" font-size="14" font-family="Cascadia Code,Fira Code,Consolas,monospace" xml:space="preserve">{txt}</text></g>\n')
 
     # ─── Stats row ───
     stat_items = [
@@ -111,8 +111,8 @@ def banner_svg(theme='dark'):
         cx = 42 + 8 + i*col_w + col_w//2
         dl = round(7.0 + i*0.2, 1)
         stats_svg += (f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{dl}s" fill="freeze"/>'
-                      f'<text x="{cx}" y="598" text-anchor="middle" font-size="11" fill="{txd}" font-family="Segoe UI,sans-serif">{em} {lb}</text>'
-                      f'<text x="{cx}" y="630" text-anchor="middle" font-size="26" fill="{cl}" font-weight="bold" font-family="Segoe UI,sans-serif">{val}</text></g>\n')
+                      f'<text x="{cx}" y="641" text-anchor="middle" font-size="11" fill="{txd}" font-family="Segoe UI,sans-serif">{em} {lb}</text>'
+                      f'<text x="{cx}" y="673" text-anchor="middle" font-size="26" fill="{cl}" font-weight="bold" font-family="Segoe UI,sans-serif">{val}</text></g>\n')
 
     # ─── About Me ───
     about_lines = [
@@ -122,7 +122,7 @@ def banner_svg(theme='dark'):
     ]
     about_svg = ""
     for i,(em,ln) in enumerate(about_lines):
-        y = 500 + i*24; dl = round(6.2 + i*0.25, 2)
+        y = 535 + i*26; dl = round(6.2 + i*0.25, 2)
         about_svg += (f'<text x="42" y="{y}" font-size="15" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif">'
                       f'{em} {ln}<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{dl}s" fill="freeze"/></text>\n')
 
@@ -200,7 +200,7 @@ def banner_svg(theme='dark'):
   <clipPath id="hrc"><rect x="{CX}" y="{CY}" width="{CW+20}" height="0">
     <animate attributeName="height" from="0" to="{CH_IMG+20}" dur="2.5s" begin="0.5s" fill="freeze"/></rect></clipPath>
   <clipPath id="tc"><rect x="40" y="22" width="0" height="28">
-    <animate attributeName="width" from="0" to="480" dur="2s" begin="0.3s" fill="freeze"/></rect></clipPath>
+    <animate attributeName="width" from="0" to="460" dur="2s" begin="0.3s" fill="freeze"/></rect></clipPath>
   <clipPath id="r1c"><rect x="55" y="202" width="0" height="32">
     <animate attributeName="width" values="0;0;290;290;0;0;0;0;0" keyTimes="0;0.02;0.20;0.30;0.33;0.34;0.67;0.68;1" dur="9s" repeatCount="indefinite" begin="3.5s"/></rect></clipPath>
   <clipPath id="r2c"><rect x="55" y="202" width="0" height="32">
@@ -281,40 +281,40 @@ def banner_svg(theme='dark'):
     <tspan x="55" y="292">I code it.</tspan></text>
 
   <!-- Tech I Know -->
-  <text x="42" y="335" font-size="14" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif" font-weight="bold">
-    &#9881; Tech I Know<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="4.3s" fill="freeze"/></text>
+  <text x="42" y="345" font-size="16" fill="{tp}" opacity="0" font-family="Segoe UI,sans-serif" font-weight="bold">
+    &#128187; Tech I Know<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="4.3s" fill="freeze"/></text>
   {pills}
 
   <!-- About Me -->
-  <text x="42" y="478" font-size="14" fill="{tx}" opacity="0" font-family="Segoe UI,sans-serif" font-weight="bold">
-    &#10084; About Me<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="5.8s" fill="freeze"/></text>
+  <text x="42" y="510" font-size="16" fill="{tp}" opacity="0" font-family="Segoe UI,sans-serif" font-weight="bold">
+    &#10024; About Me<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="5.8s" fill="freeze"/></text>
   {about_svg}
 
   <!-- Stats row card -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="6.8s" fill="freeze"/>
-    <rect x="42" y="572" width="520" height="82" rx="10" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
+    <rect x="42" y="615" width="520" height="82" rx="10" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
     <!-- Dividers -->
-    <line x1="172" y1="585" x2="172" y2="647" stroke="{stat_border}" stroke-width="1"/>
-    <line x1="302" y1="585" x2="302" y2="647" stroke="{stat_border}" stroke-width="1"/>
-    <line x1="432" y1="585" x2="432" y2="647" stroke="{stat_border}" stroke-width="1"/></g>
+    <line x1="172" y1="628" x2="172" y2="690" stroke="{stat_border}" stroke-width="1"/>
+    <line x1="302" y1="628" x2="302" y2="690" stroke="{stat_border}" stroke-width="1"/>
+    <line x1="432" y1="628" x2="432" y2="690" stroke="{stat_border}" stroke-width="1"/></g>
   {stats_svg}
 
   <!-- Contact row -->
   <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="7.8s" fill="freeze"/>
     <!-- Github -->
-    <rect x="42" y="685" width="130" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
-    <text x="60" y="706" font-size="14" fill="{tx}">&#128231;</text>
-    <text x="82" y="705" font-size="14" fill="{txd}" font-family="Segoe UI,sans-serif">Akshat685</text>
+    <rect x="42" y="725" width="130" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
+    <text x="60" y="746" font-size="14" fill="{tx}">&#128231;</text>
+    <text x="82" y="745" font-size="14" fill="{txd}" font-family="Segoe UI,sans-serif">Akshat685</text>
     
     <!-- Email -->
-    <rect x="182" y="685" width="260" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
-    <text x="200" y="706" font-size="14" fill="{tx}">&#9993;</text>
-    <text x="222" y="705" font-size="14" fill="{txd}" font-family="Segoe UI,sans-serif">akshatshettigar2001@gmail.com</text>
+    <rect x="182" y="725" width="260" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
+    <text x="200" y="746" font-size="14" fill="{tx}">&#9993;</text>
+    <text x="222" y="745" font-size="14" fill="{txd}" font-family="Segoe UI,sans-serif">akshatshettigar2001@gmail.com</text>
 
     <!-- Collaborate -->
-    <rect x="452" y="685" width="180" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
-    <text x="470" y="705" font-size="12" fill="#4ade80">&#9679;</text>
-    <text x="486" y="705" font-size="14" fill="{txd}" font-family="Segoe UI,sans-serif">open to collaborate</text>
+    <rect x="452" y="725" width="180" height="32" rx="16" fill="{stat_card}" stroke="{stat_border}" stroke-width="1"/>
+    <text x="470" y="745" font-size="12" fill="#4ade80">&#9679;</text>
+    <text x="486" y="745" font-size="14" fill="{txd}" font-family="Segoe UI,sans-serif">open to collaborate</text>
   </g>
 
   <!-- Bottom quote -->
@@ -330,7 +330,7 @@ def banner_svg(theme='dark'):
     <circle cx="{CE_X+18}" cy="{CE_Y+13}" r="4.5" fill="#ef4444" opacity="0.8"/>
     <circle cx="{CE_X+33}" cy="{CE_Y+13}" r="4.5" fill="#f59e0b" opacity="0.8"/>
     <circle cx="{CE_X+48}" cy="{CE_Y+13}" r="4.5" fill="#22c55e" opacity="0.8"/>
-    <text x="{CE_X+142}" y="{CE_Y+20}" text-anchor="middle" font-size="13" fill="{txd}" font-family="Segoe UI,sans-serif">dreams.jsx</text></g>
+    <text x="{CE_X+132}" y="{CE_Y+20}" text-anchor="middle" font-size="13" fill="{txd}" font-family="Segoe UI,sans-serif">dreams.jsx</text></g>
   {editor_svg}
 
   <!-- ══════ NEON SIGN (top-right) ══════ -->
