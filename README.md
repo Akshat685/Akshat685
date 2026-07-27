@@ -40,7 +40,7 @@
 | 💪 [GymFuel](https://github.com/Akshat685) | `MongoDB` `Express.js` `React.js`<br>`Node.js` `HTML` `CSS` `JS` | 🔗 |
 | 📋 [FlowBoard](https://github.com/Akshat685) | `Next.js` `TypeScript` `Tailwind CSS` `GraphQL`<br>`Apollo` `Prisma` `PostgreSQL` `Sanity` `Node.js` | 🔗 |
 
-> 💡 *"First, solve the problem. Then, write the code." - John Johnson*
+> 💡 *"First, solve the problem. Then, write the code." *
 
 </td>
 </tr>
