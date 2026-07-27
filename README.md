@@ -16,11 +16,18 @@
 <!--  LANYARD + FEATURED PROJECTS (side by side)               -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<a href="https://github.com/Akshat685">
-  <img align="left" src="lanyard.svg?v=2" alt="Developer ID Badge" width="280" />
-</a>
+<br/><br/>
 
-<br/>
+<table>
+<tr>
+<td width="300" align="center" valign="top">
+
+<img src="lanyard.svg?v=2" alt="Developer ID Badge" width="280" />
+
+<sub>~ drag me.. just kidding, I'm an SVG ♥ ~</sub>
+
+</td>
+<td valign="top">
 
 ### 🚀 My Projects
 
@@ -37,7 +44,11 @@
 > 
 > ❤️ *"I don't watch anime, I code anime."*
 
-<br clear="left"/>
+</td>
+</tr>
+</table>
+
+<br/><br/>
 
 <br/>
 
