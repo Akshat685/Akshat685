@@ -29,12 +29,14 @@
 
 ### 🚀 My Projects
 
-| 🎯 Project | 💻 Tech | ⭐ |
+| 📁 Project | 💻 Tech | 🔗 |
 |:-----------|:--------|:--:|
-| 🤖 [AI Chat App](https://github.com/Akshat685) | `Next.js` `OpenAI` `RAG` | ⭐ |
-| 🌐 [Portfolio Site](https://github.com/Akshat685) | `React` `TailwindCSS` | ⭐ |
-| 📊 [Data Dashboard](https://github.com/Akshat685) | `TypeScript` `GraphQL` | ⭐ |
-| 🔧 [Dev Tools CLI](https://github.com/Akshat685) | `Node.js` `TypeScript` | ⭐ |
+| 🤖 [Workforce Pulse](https://github.com/Akshat685) | `Next.js` `TypeScript` `Tailwind CSS` `Recharts` `Zod` `PapaParse` `jsPDF` `OpenAI API` | 🔗 |
+| 💬 [Chat with Website](https://github.com/Akshat685) | `Next.js` `TypeScript` `Tailwind CSS` `Cheerio` `OpenAI SDK` `Gemini API` | 🔗 |
+| 🔄 [File Converter](https://github.com/Akshat685) | `React` `TypeScript` `Node.js` `Express.js` `Dropbox API` `Google API` | 🔗 |
+| 📦 [InvyTrack](https://github.com/Akshat685) | `MongoDB` `Express.js` `React.js` `Node.js` `HTML` `CSS` `JS` | 🔗 |
+| 💪 [GymFuel](https://github.com/Akshat685) | `MongoDB` `Express.js` `React.js` `Node.js` `HTML` `CSS` `JS` | 🔗 |
+| 📋 [FlowBoard](https://github.com/Akshat685) | `Next.js` `TypeScript` `Tailwind CSS` `GraphQL` `Apollo` `Prisma` `PostgreSQL` `Sanity` `Node.js` | 🔗 |
 
 > 💡 *Update the links above with your actual project repositories!*
 

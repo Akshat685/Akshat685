@@ -524,7 +524,61 @@ def trophies_svg():
 </svg>'''
 
 
+
+# ═══════════════════════════════════════════════════════════
+#  PROJECTS SVG
+# ═══════════════════════════════════════════════════════════
+def projects_svg():
+    projects = [
+        ("Workforce Pulse", ["Next.js", "TypeScript", "Tailwind CSS", "Recharts", "Zod", "PapaParse", "jsPDF", "OpenAI API"]),
+        ("Chat with Website", ["Next.js", "TypeScript", "Tailwind CSS", "Cheerio", "OpenAI SDK", "Gemini API"]),
+        ("File Converter", ["React", "TypeScript", "Node.js", "Express.js", "Dropbox API", "Google API"]),
+        ("InvyTrack", ["MongoDB", "Express.js", "React.js", "Node.js", "HTML", "CSS", "JavaScript"]),
+        ("GymFuel", ["MongoDB", "Express.js", "React.js", "Node.js", "HTML", "CSS", "JavaScript"]),
+        ("FlowBoard", ["Next.js", "TypeScript", "Tailwind CSS", "GraphQL", "Apollo", "Prisma", "PostgreSQL", "Sanity", "Node.js"])
+    ]
+    
+    W = 500
+    row_H = 80
+    H = len(projects) * row_H + 50
+    
+    cards = ""
+    for i, (title, tech) in enumerate(projects):
+        y = 45 + i * row_H
+        dl = round(0.5 + i * 0.1, 2)
+        
+        tech_svg = ""
+        full_str = " • ".join(tech)
+        if len(full_str) < 65:
+            tech_svg = f'<text x="25" y="{y+48}" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">{" &#9679; ".join(tech)}</text>'
+        else:
+            mid = len(tech)//2 + 1
+            l1 = " &#9679; ".join(tech[:mid])
+            l2 = " &#9679; ".join(tech[mid:])
+            tech_svg = f'<text x="25" y="{y+42}" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">{l1}</text>'
+            tech_svg += f'<text x="25" y="{y+56}" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">{l2}</text>'
+            
+        cards += f'''
+        <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{dl}s" fill="freeze"/>
+          <rect x="5" y="{y}" width="490" height="70" rx="10" fill="rgba(13,2,33,0.6)" stroke="#4c1d95" stroke-width="1.2" stroke-opacity="0.8"/>
+          <text x="25" y="{y+24}" font-size="14" fill="#f472b6" font-family="Segoe UI,sans-serif" font-weight="bold">&#128640; {title}</text>
+          {tech_svg}
+          <circle cx="475" cy="{y+35}" r="12" fill="#1a0533" stroke="#c026d3" stroke-width="1.5"/>
+          <path d="M472 30 L478 35 L472 40" stroke="#f8fafc" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </g>
+        '''
+        
+    return f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">
+<defs><linearGradient id="cBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a0533"/><stop offset="100%" stop-color="#0d0221"/></linearGradient></defs>
+<rect width="{W}" height="{H}" rx="14" fill="url(#cBg)" stroke="#4c1d95" stroke-width="1"/>
+<text x="15" y="28" font-size="16" fill="#e2e8f0" font-family="Segoe UI,sans-serif" font-weight="bold">&#128187; My Projects</text>
+<line x1="15" y1="36" x2="485" y2="36" stroke="#4c1d95" stroke-width="1"/>
+{cards}
+</svg>'''
+
 if __name__ == '__main__':
+
     print("Generating v3 SVGs (redesigned layout)...")
     files = {
         'banner.svg': banner_svg('dark'),

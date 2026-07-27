@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 530" width="500" height="530">
+<defs><linearGradient id="cBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a0533"/><stop offset="100%" stop-color="#0d0221"/></linearGradient></defs>
+<rect width="500" height="530" rx="14" fill="url(#cBg)" stroke="#4c1d95" stroke-width="1"/>
+<text x="15" y="28" font-size="16" fill="#e2e8f0" font-family="Segoe UI,sans-serif" font-weight="bold">&#128187; My Projects</text>
+<line x1="15" y1="36" x2="485" y2="36" stroke="#4c1d95" stroke-width="1"/>
+
+        <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.5s" fill="freeze"/>
+          <rect x="5" y="45" width="490" height="70" rx="10" fill="rgba(13,2,33,0.6)" stroke="#4c1d95" stroke-width="1.2" stroke-opacity="0.8"/>
+          <text x="25" y="69" font-size="14" fill="#f472b6" font-family="Segoe UI,sans-serif" font-weight="bold">&#128640; Workforce Pulse</text>
+          <text x="25" y="87" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">Next.js &#9679; TypeScript &#9679; Tailwind CSS &#9679; Recharts &#9679; Zod</text><text x="25" y="101" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">PapaParse &#9679; jsPDF &#9679; OpenAI API</text>
+          <circle cx="475" cy="80" r="12" fill="#1a0533" stroke="#c026d3" stroke-width="1.5"/>
+          <path d="M472 30 L478 35 L472 40" stroke="#f8fafc" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </g>
+        
+        <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.6s" fill="freeze"/>
+          <rect x="5" y="125" width="490" height="70" rx="10" fill="rgba(13,2,33,0.6)" stroke="#4c1d95" stroke-width="1.2" stroke-opacity="0.8"/>
+          <text x="25" y="149" font-size="14" fill="#f472b6" font-family="Segoe UI,sans-serif" font-weight="bold">&#128640; Chat with Website</text>
+          <text x="25" y="167" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">Next.js &#9679; TypeScript &#9679; Tailwind CSS &#9679; Cheerio</text><text x="25" y="181" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">OpenAI SDK &#9679; Gemini API</text>
+          <circle cx="475" cy="160" r="12" fill="#1a0533" stroke="#c026d3" stroke-width="1.5"/>
+          <path d="M472 30 L478 35 L472 40" stroke="#f8fafc" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </g>
+        
+        <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.7s" fill="freeze"/>
+          <rect x="5" y="205" width="490" height="70" rx="10" fill="rgba(13,2,33,0.6)" stroke="#4c1d95" stroke-width="1.2" stroke-opacity="0.8"/>
+          <text x="25" y="229" font-size="14" fill="#f472b6" font-family="Segoe UI,sans-serif" font-weight="bold">&#128640; File Converter</text>
+          <text x="25" y="247" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">React &#9679; TypeScript &#9679; Node.js &#9679; Express.js</text><text x="25" y="261" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">Dropbox API &#9679; Google API</text>
+          <circle cx="475" cy="240" r="12" fill="#1a0533" stroke="#c026d3" stroke-width="1.5"/>
+          <path d="M472 30 L478 35 L472 40" stroke="#f8fafc" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </g>
+        
+        <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.8s" fill="freeze"/>
+          <rect x="5" y="285" width="490" height="70" rx="10" fill="rgba(13,2,33,0.6)" stroke="#4c1d95" stroke-width="1.2" stroke-opacity="0.8"/>
+          <text x="25" y="309" font-size="14" fill="#f472b6" font-family="Segoe UI,sans-serif" font-weight="bold">&#128640; InvyTrack</text>
+          <text x="25" y="327" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">MongoDB &#9679; Express.js &#9679; React.js &#9679; Node.js</text><text x="25" y="341" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">HTML &#9679; CSS &#9679; JavaScript</text>
+          <circle cx="475" cy="320" r="12" fill="#1a0533" stroke="#c026d3" stroke-width="1.5"/>
+          <path d="M472 30 L478 35 L472 40" stroke="#f8fafc" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </g>
+        
+        <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.9s" fill="freeze"/>
+          <rect x="5" y="365" width="490" height="70" rx="10" fill="rgba(13,2,33,0.6)" stroke="#4c1d95" stroke-width="1.2" stroke-opacity="0.8"/>
+          <text x="25" y="389" font-size="14" fill="#f472b6" font-family="Segoe UI,sans-serif" font-weight="bold">&#128640; GymFuel</text>
+          <text x="25" y="407" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">MongoDB &#9679; Express.js &#9679; React.js &#9679; Node.js</text><text x="25" y="421" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">HTML &#9679; CSS &#9679; JavaScript</text>
+          <circle cx="475" cy="400" r="12" fill="#1a0533" stroke="#c026d3" stroke-width="1.5"/>
+          <path d="M472 30 L478 35 L472 40" stroke="#f8fafc" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </g>
+        
+        <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.0s" fill="freeze"/>
+          <rect x="5" y="445" width="490" height="70" rx="10" fill="rgba(13,2,33,0.6)" stroke="#4c1d95" stroke-width="1.2" stroke-opacity="0.8"/>
+          <text x="25" y="469" font-size="14" fill="#f472b6" font-family="Segoe UI,sans-serif" font-weight="bold">&#128640; FlowBoard</text>
+          <text x="25" y="487" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">Next.js &#9679; TypeScript &#9679; Tailwind CSS &#9679; GraphQL &#9679; Apollo</text><text x="25" y="501" font-size="10" fill="#94a3b8" font-family="Cascadia Code,monospace">Prisma &#9679; PostgreSQL &#9679; Sanity &#9679; Node.js</text>
+          <circle cx="475" cy="480" r="12" fill="#1a0533" stroke="#c026d3" stroke-width="1.5"/>
+          <path d="M472 30 L478 35 L472 40" stroke="#f8fafc" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </g>
+        
+</svg>
