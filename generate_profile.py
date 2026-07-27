@@ -357,10 +357,10 @@ def banner_svg(theme='dark'):
 # ═══════════════════════════════════════════════════════════
 def lanyard_svg():
     bars = ""
-    bx = 105
-    widths = [2,1,3,1,1,2,1,3,2,1,1,1,2,1,3,1,2,1,1,2,3,1,1,2,1,1,2,1,3,1,2,1,2]
+    bx = 75
+    widths = [2,1,3,1,1,2,1,3,2,1,1,1,2,1,3,1,2,1,1,2,3,1,1,2,1,1,2]
     for w in widths:
-        bars += f'<rect x="{bx}" y="460" width="{w}" height="28" fill="rgba(255,255,255,0.45)" rx="0.5"/>\n'
+        bars += f'<rect x="{bx}" y="495" width="{w}" height="35" fill="rgba(255,255,255,0.75)" rx="0.5"/>\n'
         bx += w + 1.5
 
     return f'''<?xml version="1.0" encoding="UTF-8"?>
@@ -372,8 +372,8 @@ def lanyard_svg():
   <linearGradient id="hS" x1="0" y1="0" x2="1" y2="0.3"><stop offset="0%" stop-color="rgba(255,255,255,0)"/><stop offset="45%" stop-color="rgba(255,255,255,0)"/><stop offset="50%" stop-color="rgba(255,255,255,0.2)"/><stop offset="55%" stop-color="rgba(255,255,255,0)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></linearGradient>
   <linearGradient id="sG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#c026d3"/></linearGradient>
   <linearGradient id="cG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#16213e"/></linearGradient>
-  <clipPath id="aC"><circle cx="170" cy="315" r="48"/></clipPath>
-  <clipPath id="cC"><rect x="70" y="220" width="200" height="380" rx="14"/></clipPath>
+  <clipPath id="aC"><circle cx="170" cy="310" r="48"/></clipPath>
+  <clipPath id="cC"><rect x="60" y="225" width="220" height="320" rx="14"/></clipPath>
   <filter id="cSh"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/></filter>
   <filter id="aGl"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
@@ -382,40 +382,49 @@ def lanyard_svg():
   <g><animateTransform attributeName="transform" type="rotate" values="0 170 0;18 170 0;-14 170 0;10 170 0;-7 170 0;4 170 0;-2.5 170 0;1.5 170 0;0 170 0" dur="3s" begin="0.8s" fill="freeze"/>
     <g><animateTransform attributeName="transform" type="rotate" values="0 170 0;2 170 0;0 170 0;-2 170 0;0 170 0" dur="5s" begin="3.8s" repeatCount="indefinite"/>
 
-      <!-- Strap (pink, angled text like reference) -->
-      <rect x="145" y="0" width="50" height="208" rx="3" fill="url(#sG)"/>
-      <text transform="rotate(-90, 170, 50)" x="170" y="54" text-anchor="middle" font-size="6" fill="rgba(255,255,255,0.5)" font-family="Segoe UI,sans-serif" letter-spacing="1" font-weight="bold">AKSHAT.DEV &#9679; CODE &#9679; AKSHAT.DEV &#9679; CODE &#9679; AKSHAT.DEV</text>
-      <text transform="rotate(-90, 170, 140)" x="170" y="144" text-anchor="middle" font-size="6" fill="rgba(255,255,255,0.5)" font-family="Segoe UI,sans-serif" letter-spacing="1" font-weight="bold">AKSHAT.DEV &#9679; CODE &#9679; AKSHAT.DEV &#9679; CODE &#9679; AKSHAT.DEV</text>
-
-      <!-- Clasp -->
-      <rect x="155" y="200" width="30" height="12" rx="3" fill="url(#mG)" stroke="#9ca3af" stroke-width="0.5"/>
-      <circle cx="170" cy="218" r="7" fill="none" stroke="url(#mG)" stroke-width="2.5"/>
+      <!-- Strap & Hole -->
+      <rect x="148" y="0" width="44" height="238" fill="url(#sG)"/>
+      <!-- Rope border stripes (stitching) -->
+      <line x1="151" y1="0" x2="151" y2="238" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-dasharray="4,4"/>
+      <line x1="189" y1="0" x2="189" y2="238" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-dasharray="4,4"/>
+      
+      <text transform="rotate(-90, 170, 119)" x="170" y="119" text-anchor="middle" alignment-baseline="central" font-size="7" fill="rgba(255,255,255,0.6)" font-family="Segoe UI,sans-serif" letter-spacing="2" font-weight="bold">AKSHAT.DEV &#9679; CODE &#9679; AKSHAT.DEV &#9679; CODE &#9679; AKSHAT.DEV</text>
 
       <!-- Card with glow border -->
       <g filter="url(#cSh)">
-        <rect x="70" y="225" width="200" height="380" rx="14" fill="url(#cG)" stroke="url(#gR)" stroke-width="1.5" stroke-opacity="0.5"/></g>
+        <rect x="60" y="225" width="220" height="320" rx="14" fill="url(#cG)" stroke="url(#gR)" stroke-width="1.5" stroke-opacity="0.8"/></g>
+        
+      <rect x="140" y="232" width="60" height="12" rx="6" fill="#0d0221" stroke="#334155" stroke-width="2"/>
 
       <!-- Header -->
-      <text x="90" y="250" font-size="8" fill="#94a3b8" font-family="Segoe UI,sans-serif" letter-spacing="1" font-weight="bold">DEVELOPER ID</text>
-      <text x="250" y="250" text-anchor="end" font-size="8" fill="#f472b6" font-family="Cascadia Code,monospace" font-weight="bold">AS-0685</text>
+      <text x="75" y="260" font-size="8" fill="#94a3b8" font-family="Segoe UI,sans-serif" letter-spacing="1" font-weight="bold">DEVELOPER ID</text>
+      <text x="265" y="260" text-anchor="end" font-size="8" fill="#f472b6" font-family="Cascadia Code,monospace" font-weight="bold">AS-0685</text>
+      
+      <!-- Avatar glow ring (zoomed image) -->
+      <circle cx="170" cy="310" r="53" fill="none" stroke="url(#gR)" stroke-width="2.5" opacity="0.8" filter="url(#aGl)">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/></circle>
+      <image clip-path="url(#aC)" href="data:image/png;base64,{FACE_B64}" xlink:href="data:image/png;base64,{FACE_B64}" x="100" y="255" width="180" height="160"/>
 
-      <!-- Avatar glow ring -->
-      <circle cx="170" cy="315" r="53" fill="none" stroke="url(#gR)" stroke-width="2.5" opacity="0.6" filter="url(#aGl)">
-        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/></circle>
-      <image clip-path="url(#aC)" href="data:image/png;base64,{FACE_B64}" xlink:href="data:image/png;base64,{FACE_B64}" x="122" y="267" width="96" height="96"/>
+      <!-- Name in neon cursive -->
+      <text x="170" y="405" text-anchor="middle" font-size="22" fill="#f9a8d4" font-family="Segoe Script,Brush Script MT,cursive" font-weight="bold" filter="url(#ng)">Akshat Shettigar</text>
+      <text x="170" y="405" text-anchor="middle" font-size="22" fill="#fff" font-family="Segoe Script,Brush Script MT,cursive" font-weight="bold">Akshat Shettigar</text>
+      
+      <!-- Role with glitch effect -->
+      <text x="169" y="435" text-anchor="middle" font-size="10" fill="#f43f5e" font-family="Segoe UI,sans-serif" font-weight="bold" letter-spacing="2">FULL STACK DEVELOPER</text>
+      <text x="171" y="435" text-anchor="middle" font-size="10" fill="#0ea5e9" font-family="Segoe UI,sans-serif" font-weight="bold" letter-spacing="2">FULL STACK DEVELOPER</text>
+      <text x="170" y="435" text-anchor="middle" font-size="10" fill="#f8fafc" font-family="Segoe UI,sans-serif" font-weight="bold" letter-spacing="2">FULL STACK DEVELOPER</text>
+      
+      <!-- Username -->
+      <text x="170" y="455" text-anchor="middle" font-size="9" fill="#93c5fd" font-family="Cascadia Code,monospace">@Akshat685</text>
 
-      <!-- Name in cursive -->
-      <text x="170" y="395" text-anchor="middle" font-size="20" fill="#f8fafc" font-family="Segoe Script,Brush Script MT,cursive" font-weight="bold">Akshat Shettigar</text>
-      <text x="170" y="415" text-anchor="middle" font-size="10" fill="#f472b6" font-family="Segoe UI,sans-serif" font-weight="bold" letter-spacing="2">FULL STACK DEVELOPER</text>
-      <text x="170" y="435" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="Segoe UI,sans-serif">@Akshat685</text>
-
-      <line x1="100" y1="450" x2="240" y2="450" stroke="rgba(124,58,237,0.2)" stroke-width="1"/>
+      <!-- Footer: Barcode Left, Tech Right -->
       {bars}
-      <text x="170" y="503" text-anchor="middle" font-size="7" fill="#64748b" font-family="Cascadia Code,monospace" letter-spacing="1">React &#9679; Next.js &#9679; AI</text>
-      <text x="170" y="518" text-anchor="middle" font-size="7" fill="#64748b" font-family="Cascadia Code,monospace" letter-spacing="1">Node &#9679; GraphQL</text>
+      <text x="265" y="505" text-anchor="end" font-size="7" fill="#94a3b8" font-family="Cascadia Code,monospace" letter-spacing="1">REACT &#9679; NEXT.JS</text>
+      <text x="265" y="515" text-anchor="end" font-size="7" fill="#94a3b8" font-family="Cascadia Code,monospace" letter-spacing="1">NODE.JS &#9679; GRAPHQL</text>
+      <text x="265" y="525" text-anchor="end" font-size="7" fill="#94a3b8" font-family="Cascadia Code,monospace" letter-spacing="1">OPENAI &#9679; GEMINI</text>
 
       <!-- Holographic shine -->
-      <rect x="-200" y="225" width="200" height="380" fill="url(#hS)" clip-path="url(#cC)" opacity="0.6">
+      <rect x="-200" y="225" width="220" height="320" fill="url(#hS)" clip-path="url(#cC)" opacity="0.5">
         <animate attributeName="x" from="-200" to="340" dur="3s" begin="2s" repeatCount="indefinite"/></rect>
     </g>
   </g>
