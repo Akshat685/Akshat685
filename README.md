@@ -54,11 +54,16 @@
 
 <h2>📊 GitHub Stats & Graphs</h2>
 
-<p>
-  <img src="stats.svg?v=2" alt="GitHub Stats" width="500" />
-  &nbsp;&nbsp;
-  <img src="langs.svg?v=2" alt="Top Languages" width="340" />
-</p>
+<table>
+<tr>
+<td align="center" valign="top">
+<img src="stats.svg?v=2" alt="GitHub Stats" width="500" />
+</td>
+<td align="center" valign="top">
+<img src="langs.svg?v=2" alt="Top Languages" width="340" />
+</td>
+</tr>
+</table>
 
 <br/>
 
