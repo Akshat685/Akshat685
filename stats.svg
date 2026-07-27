@@ -2,7 +2,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 230" width="500" height="230">
 <defs><linearGradient id="cBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a0533"/><stop offset="100%" stop-color="#0d0221"/></linearGradient>
   <linearGradient id="rG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#c026d3"/></linearGradient>
-  <linearGradient id="bdr" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#c026d3"/></linearGradient></defs>
+  <linearGradient id="bdr" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#c026d3"/></linearGradient>
+  <linearGradient id="hS" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,0)"/><stop offset="45%" stop-color="rgba(255,255,255,0)"/><stop offset="50%" stop-color="rgba(255,255,255,0.4)"/><stop offset="55%" stop-color="rgba(255,255,255,0)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></linearGradient>
+  <clipPath id="cC"><rect width="500" height="230" rx="12"/></clipPath></defs>
 <rect width="500" height="230" rx="12" fill="url(#cBg)" stroke="url(#bdr)" stroke-width="1.5" stroke-opacity="0.3"/>
 <text x="22" y="30" font-size="14" fill="#f472b6" font-family="Segoe UI,sans-serif" font-weight="bold">&#11088; Akshat Shettigar's GitHub Stats</text>
 <line x1="22" y1="40" x2="280" y2="40" stroke="#4c1d95" stroke-width="1"/>
@@ -18,4 +20,6 @@
   <animate attributeName="stroke-dashoffset" from="314" to="95" dur="2s" begin="0.5s" fill="freeze"/></circle>
 <text x="410" y="125" text-anchor="middle" font-size="24" fill="#c084fc" font-family="Segoe UI,sans-serif" font-weight="bold" opacity="0">B+<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.8s" fill="freeze"/></text>
 <text x="410" y="145" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="Segoe UI,sans-serif" opacity="0">RANK<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.8s" fill="freeze"/></text>
+<rect x="-500" y="0" width="500" height="230" fill="url(#hS)" clip-path="url(#cC)" opacity="0.5">
+  <animate attributeName="x" from="-500" to="500" dur="3s" begin="2s" repeatCount="indefinite"/></rect>
 </svg>
