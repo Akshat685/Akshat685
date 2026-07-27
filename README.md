@@ -16,37 +16,28 @@
 <!--  LANYARD + FEATURED PROJECTS (side by side)               -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<table>
-<tr>
-<td width="300" align="center" valign="top">
+<a href="https://github.com/Akshat685">
+  <img align="left" src="lanyard.svg?v=2" alt="Developer ID Badge" width="280" />
+</a>
 
-<img src="lanyard.svg?v=2" alt="Developer ID Badge" width="280" />
-
-<sub>~ drag me.. just kidding, I'm an SVG ♥ ~</sub>
-
-</td>
-<td valign="top">
+<br/>
 
 ### 🚀 My Projects
 
 | 📁 Project | 💻 Tech | 🔗 |
 |:-----------|:--------|:--:|
-| 🤖 [Workforce Pulse](https://github.com/Akshat685) | `Next.js` `TypeScript` `Tailwind CSS` `Recharts` `Zod` `PapaParse` `jsPDF` `OpenAI API` | 🔗 |
-| 💬 [Chat with Website](https://github.com/Akshat685) | `Next.js` `TypeScript` `Tailwind CSS` `Cheerio` `OpenAI SDK` `Gemini API` | 🔗 |
-| 🔄 [File Converter](https://github.com/Akshat685) | `React` `TypeScript` `Node.js` `Express.js` `Dropbox API` `Google API` | 🔗 |
-| 📦 [InvyTrack](https://github.com/Akshat685) | `MongoDB` `Express.js` `React.js` `Node.js` `HTML` `CSS` `JS` | 🔗 |
-| 💪 [GymFuel](https://github.com/Akshat685) | `MongoDB` `Express.js` `React.js` `Node.js` `HTML` `CSS` `JS` | 🔗 |
-| 📋 [FlowBoard](https://github.com/Akshat685) | `Next.js` `TypeScript` `Tailwind CSS` `GraphQL` `Apollo` `Prisma` `PostgreSQL` `Sanity` `Node.js` | 🔗 |
+| 🤖 [Workforce Pulse](https://github.com/Akshat685) | `Next.js` `TypeScript` `Tailwind CSS` `Recharts`<br>`Zod` `PapaParse` `jsPDF` `OpenAI API` | 🔗 |
+| 💬 [Chat with Website](https://github.com/Akshat685) | `Next.js` `TypeScript` `Tailwind CSS`<br>`Cheerio` `OpenAI SDK` `Gemini API` | 🔗 |
+| 🔄 [File Converter](https://github.com/Akshat685) | `React` `TypeScript` `Node.js` `Express.js`<br>`Dropbox API` `Google API` | 🔗 |
+| 📦 [InvyTrack](https://github.com/Akshat685) | `MongoDB` `Express.js` `React.js`<br>`Node.js` `HTML` `CSS` `JS` | 🔗 |
+| 💪 [GymFuel](https://github.com/Akshat685) | `MongoDB` `Express.js` `React.js`<br>`Node.js` `HTML` `CSS` `JS` | 🔗 |
+| 📋 [FlowBoard](https://github.com/Akshat685) | `Next.js` `TypeScript` `Tailwind CSS` `GraphQL`<br>`Apollo` `Prisma` `PostgreSQL` `Sanity` `Node.js` | 🔗 |
 
 > 💡 *Update the links above with your actual project repositories!*
-
-<br/>
-
+> 
 > ❤️ *"I don't watch anime, I code anime."*
 
-</td>
-</tr>
-</table>
+<br clear="left"/>
 
 <br/>
 
