@@ -55,7 +55,7 @@
 <h2>📊 GitHub Stats & Graphs</h2>
 
 <table border="0" cellpadding="0" cellspacing="0">
-<tr>
+<tr border="0">
 <td align="center">
 <img src="stats.svg?v=2" alt="GitHub Stats" width="500" />
 </td>
