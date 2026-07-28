@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Generate v3 animated GitHub profile SVGs - redesigned layout matching reference."""
-import os, random
+import os, random, urllib.request, json
 DIR = os.path.dirname(os.path.abspath(__file__))
 random.seed(42)
 
@@ -10,9 +10,128 @@ with open(os.path.join(DIR, 'char_face_b64.txt')) as f:
     FACE_B64 = f.read().strip()
 
 # ═══════════════════════════════════════════════════════════
+#  GITHUB API + HELPERS
+# ═══════════════════════════════════════════════════════════
+LANG_COLORS = {
+    "JavaScript": "#f7df1e", "TypeScript": "#3178c6", "HTML": "#e34f26",
+    "CSS": "#1572b6", "Python": "#3572a5", "Java": "#b07219",
+    "C++": "#f34b7d", "C#": "#239120", "Go": "#00ADD8", "Rust": "#dea584",
+    "Ruby": "#701516", "PHP": "#777bb4", "Shell": "#89e051",
+    "Dockerfile": "#384d54", "SCSS": "#c6538c", "Vue": "#41b883",
+    "Svelte": "#ff3e00", "Kotlin": "#A97BFF", "Swift": "#F05138",
+    "Dart": "#00B4AB", "EJS": "#a91e50", "Jupyter Notebook": "#DA5B0B",
+    "Makefile": "#427819", "PowerShell": "#012456", "Batchfile": "#C1F12E",
+}
+
+def fmt(n):
+    """Format a number for display (e.g. 15 -> '15+', 1500 -> '1k+')."""
+    if n >= 1000:
+        return f"{n // 1000}k+"
+    return f"{n}+"
+
+def compute_rank(data):
+    """Compute a letter rank from GitHub stats."""
+    if not data:
+        return "B+"
+    s = data.get("total_stars", 0)
+    c = data.get("total_commits", 0)
+    r = data.get("public_repos", 0)
+    fl = data.get("followers", 0)
+    p = data.get("total_prs", 0)
+    score = s * 2 + c * 0.5 + r * 3 + fl * 1.5 + p * 2
+    if score >= 500: return "A+"
+    if score >= 300: return "A"
+    if score >= 150: return "B+"
+    if score >= 80: return "B"
+    if score >= 30: return "C+"
+    return "C"
+
+def fetch_github_stats(username="Akshat685"):
+    """Fetch real stats from the GitHub REST API."""
+    headers = {"User-Agent": "GitHub-Profile-Generator"}
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if token:
+        headers["Authorization"] = f"token {token}"
+
+    def api_get(url):
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return json.loads(resp.read())
+
+    # User info
+    user = api_get(f"https://api.github.com/users/{username}")
+
+    # Repos (paginated, owner only)
+    repos, page = [], 1
+    while True:
+        batch = api_get(f"https://api.github.com/users/{username}/repos?per_page=100&page={page}&type=owner")
+        if not batch:
+            break
+        repos.extend(batch)
+        if len(batch) < 100:
+            break
+        page += 1
+
+    total_stars = sum(r.get("stargazers_count", 0) for r in repos)
+    own_repos = [r for r in repos if not r.get("fork")]
+
+    # Languages (aggregate bytes across non-fork repos)
+    lang_bytes = {}
+    for repo in own_repos:
+        try:
+            langs = api_get(repo["languages_url"])
+            for lang, b in langs.items():
+                lang_bytes[lang] = lang_bytes.get(lang, 0) + b
+        except Exception:
+            continue
+
+    total_bytes = sum(lang_bytes.values()) or 1
+    top_langs = sorted(lang_bytes.items(), key=lambda x: -x[1])[:5]
+    lang_pcts = [(name, round(b / total_bytes * 100, 1)) for name, b in top_langs]
+
+    # Commits
+    try:
+        h = {**headers, "Accept": "application/vnd.github.cloak-preview+json"}
+        req = urllib.request.Request(
+            f"https://api.github.com/search/commits?q=author:{username}",
+            headers=h)
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            total_commits = json.loads(resp.read()).get("total_count", 0)
+    except Exception:
+        total_commits = 0
+
+    # PRs
+    try:
+        total_prs = api_get(
+            f"https://api.github.com/search/issues?q=author:{username}+type:pr"
+        ).get("total_count", 0)
+    except Exception:
+        total_prs = 0
+
+    # Issues
+    try:
+        total_issues = api_get(
+            f"https://api.github.com/search/issues?q=author:{username}+type:issue"
+        ).get("total_count", 0)
+    except Exception:
+        total_issues = 0
+
+    return {
+        "followers": user.get("followers", 0),
+        "public_repos": user.get("public_repos", 0),
+        "total_stars": total_stars,
+        "total_commits": total_commits,
+        "total_prs": total_prs,
+        "total_issues": total_issues,
+        "languages": lang_pcts,
+        "num_projects": len(own_repos),
+    }
+
+
+# ═══════════════════════════════════════════════════════════
 #  BANNER (1280x850) — Reference-matched layout
 # ═══════════════════════════════════════════════════════════
-def banner_svg(theme='dark'):
+def banner_svg(theme='dark', data=None):
     H = 850
     # -- Colors --
     if theme == 'dark':
@@ -99,11 +218,12 @@ def banner_svg(theme='dark'):
                        f'<text x="{CE_X+18}" y="{yp}" font-size="14" font-family="Cascadia Code,Fira Code,Consolas,monospace" xml:space="preserve">{txt}</text></g>\n')
 
     # ─── Stats row ───
+    _d = data or {}
     stat_items = [
-        ("&#128230;","Repos","8+","#4ade80"),
-        ("&#128221;","Commits","234+","#60a5fa"),
-        ("&#11088;","Stars","15+","#fbbf24"),
-        ("&#128101;","Followers","10+","#f472b6"),
+        ("&#128230;","Repos",fmt(_d.get('public_repos', 8)),"#4ade80"),
+        ("&#128221;","Commits",fmt(_d.get('total_commits', 234)),"#60a5fa"),
+        ("&#11088;","Stars",fmt(_d.get('total_stars', 15)),"#fbbf24"),
+        ("&#128101;","Followers",fmt(_d.get('followers', 10)),"#f472b6"),
     ]
     stats_svg = ""
     col_w = 128
@@ -439,16 +559,18 @@ def lanyard_svg():
 # ═══════════════════════════════════════════════════════════
 #  STATS SVG (improved with border glow)
 # ═══════════════════════════════════════════════════════════
-def stats_svg():
-    items = [("&#11088;","Total Stars Earned:","15+","#fbbf24"),("&#128221;","Total Commits:","234+","#4ade80"),
-             ("&#128193;","Public Repos:","8+","#60a5fa"),("&#128101;","Followers:","10+","#f472b6"),
-             ("&#128296;","Projects Built:","6","#a78bfa")]
+def stats_svg(data=None):
+    d = data or {}
+    items = [("&#11088;","Total Stars Earned:",fmt(d.get('total_stars', 15)),"#fbbf24"),("&#128221;","Total Commits:",fmt(d.get('total_commits', 234)),"#4ade80"),
+             ("&#128193;","Public Repos:",fmt(d.get('public_repos', 8)),"#60a5fa"),("&#128101;","Followers:",fmt(d.get('followers', 10)),"#f472b6"),
+             ("&#128296;","Projects Built:",str(d.get('num_projects', 6)),"#a78bfa")]
     rows = ""
     for i,(em,lb,val,cl) in enumerate(items):
         y = 58 + i*28; dl = round(0.8 + i*0.2, 2)
         rows += (f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="{dl}s" fill="freeze"/>'
                  f'<text x="22" y="{y}" font-size="12" fill="#e2e8f0" font-family="Segoe UI,sans-serif">{em} {lb}</text>'
                  f'<text x="280" y="{y}" font-size="13" fill="{cl}" font-weight="bold" font-family="Segoe UI,sans-serif" text-anchor="end">{val}</text></g>\n')
+    rank = compute_rank(data)
     return f'''<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 230" width="500" height="230">
 <defs><linearGradient id="cBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a0533"/><stop offset="100%" stop-color="#0d0221"/></linearGradient>
@@ -464,15 +586,19 @@ def stats_svg():
 <circle cx="410" cy="130" r="50" fill="none" stroke="url(#rG)" stroke-width="7"
         stroke-dasharray="314" stroke-dashoffset="314" stroke-linecap="round" transform="rotate(-90 410 130)">
   <animate attributeName="stroke-dashoffset" from="314" to="95" dur="2s" begin="0.5s" fill="freeze"/></circle>
-<text x="410" y="125" text-anchor="middle" font-size="24" fill="#c084fc" font-family="Segoe UI,sans-serif" font-weight="bold" opacity="0">B+<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.8s" fill="freeze"/></text>
+<text x="410" y="125" text-anchor="middle" font-size="24" fill="#c084fc" font-family="Segoe UI,sans-serif" font-weight="bold" opacity="0">{rank}<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.8s" fill="freeze"/></text>
 <text x="410" y="145" text-anchor="middle" font-size="10" fill="#94a3b8" font-family="Segoe UI,sans-serif" opacity="0">RANK<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.8s" fill="freeze"/></text>
 <rect x="-500" y="0" width="500" height="230" fill="url(#hS)" clip-path="url(#cC)" opacity="0.5">
   <animate attributeName="x" from="-500" to="500" dur="3s" begin="2s" repeatCount="indefinite"/></rect>
 </svg>'''
 
 
-def langs_svg():
-    langs = [("JavaScript",38,"#f7df1e"),("TypeScript",24,"#3178c6"),("HTML",15,"#e34f26"),("CSS",13,"#1572b6"),("Python",10,"#3572a5")]
+def langs_svg(data=None):
+    d = data or {}
+    if d.get('languages'):
+        langs = [(name, pct, LANG_COLORS.get(name, "#888")) for name, pct in d['languages']]
+    else:
+        langs = [("JavaScript",38,"#f7df1e"),("TypeScript",24,"#3178c6"),("HTML",15,"#e34f26"),("CSS",13,"#1572b6"),("Python",10,"#3572a5")]
     # Top bar (combined)
     top_bar = ""
     bx = 22
@@ -506,10 +632,24 @@ def langs_svg():
 </svg>'''
 
 
-def trophies_svg():
-    trophies = [("Commits","A","#fbbf24","&#128187;","234+"),("Stars","B","#c0c0c0","&#11088;","15+"),
-                ("PRs","A","#fbbf24","&#128293;","12+"),("Repos","A","#fbbf24","&#128230;","8+"),
-                ("Issues","B","#c0c0c0","&#128196;","8+"),("Followers","B","#c0c0c0","&#128101;","10+")]
+def trophies_svg(data=None):
+    d = data or {}
+    def _rank(val, a=20, b=5):
+        if val >= a: return "A", "#fbbf24"
+        if val >= b: return "B", "#c0c0c0"
+        return "C", "#cd7f32"
+    cr = _rank(d.get('total_commits', 234), 100, 30)
+    sr = _rank(d.get('total_stars', 15), 20, 5)
+    pr = _rank(d.get('total_prs', 12), 10, 3)
+    rr = _rank(d.get('public_repos', 8), 8, 3)
+    ir = _rank(d.get('total_issues', 8), 10, 3)
+    fr = _rank(d.get('followers', 10), 10, 3)
+    trophies = [("Commits",cr[0],cr[1],"&#128187;",fmt(d.get('total_commits', 234))),
+                ("Stars",sr[0],sr[1],"&#11088;",fmt(d.get('total_stars', 15))),
+                ("PRs",pr[0],pr[1],"&#128293;",fmt(d.get('total_prs', 12))),
+                ("Repos",rr[0],rr[1],"&#128230;",fmt(d.get('public_repos', 8))),
+                ("Issues",ir[0],ir[1],"&#128196;",fmt(d.get('total_issues', 8))),
+                ("Followers",fr[0],fr[1],"&#128101;",fmt(d.get('followers', 10)))]
     cells = ""
     for i,(nm,rank,cl,icon,count) in enumerate(trophies):
         x = 18 + i*128; dl = round(0.4 + i*0.15, 2)
@@ -591,18 +731,31 @@ def projects_svg():
 
 if __name__ == '__main__':
 
-    print("Generating v3 SVGs (redesigned layout)...")
+    print("Fetching GitHub stats for Akshat685...")
+    try:
+        data = fetch_github_stats("Akshat685")
+        print(f"  [OK] Stars: {data['total_stars']}, Commits: {data['total_commits']}, "
+              f"Repos: {data['public_repos']}, Followers: {data['followers']}")
+        print(f"  [OK] PRs: {data['total_prs']}, Issues: {data['total_issues']}")
+        print(f"  [OK] Top Languages: {', '.join(f'{n} ({p}%)' for n, p in data['languages'])}")
+        print(f"  [OK] Rank: {compute_rank(data)}")
+    except Exception as e:
+        print(f"  [WARN] Could not fetch stats: {e}")
+        print("    Using fallback values. Set GITHUB_TOKEN env var for reliable access.")
+        data = None
+
+    print("\nGenerating v3 SVGs (redesigned layout)...")
     files = {
-        'banner.svg': banner_svg('dark'),
-        'banner-light.svg': banner_svg('light'),
+        'banner.svg': banner_svg('dark', data),
+        'banner-light.svg': banner_svg('light', data),
         'lanyard.svg': lanyard_svg(),
-        'stats.svg': stats_svg(),
-        'langs.svg': langs_svg(),
-        'trophies.svg': trophies_svg(),
+        'stats.svg': stats_svg(data),
+        'langs.svg': langs_svg(data),
+        'trophies.svg': trophies_svg(data),
     }
     for name, content in files.items():
         path = os.path.join(DIR, name)
         with open(path, 'w', encoding='utf-8') as f:
             f.write(content)
         print(f'  OK {name} ({len(content):,} bytes)')
-    print("\nDone! All files regenerated.")
+    print("\nDone! All files regenerated with live GitHub data.")
