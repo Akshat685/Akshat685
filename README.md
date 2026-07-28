@@ -63,7 +63,7 @@
 
 <!-- Streak Stats -->
 <p>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Akshat685&theme=midnight-purple&hide_border=true&background=0d0221&stroke=4c1d95&ring=c026d3&fire=f472b6&currStreakLabel=c084fc&sideLabels=c084fc&currStreakNum=f8fafc&sideNums=f8fafc&dates=94a3b8" alt="GitHub Streak" width="500" />
+  <img src="https://streak-stats.demolab.com/?user=Akshat685&theme=midnight-purple&hide_border=true&background=0d0221&stroke=4c1d95&ring=c026d3&fire=f472b6&currStreakLabel=c084fc&sideLabels=c084fc&currStreakNum=f8fafc&sideNums=f8fafc&dates=94a3b8" alt="GitHub Streak" width="500" />
 </p>
 
 <br/>
